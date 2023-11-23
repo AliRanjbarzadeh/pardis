@@ -23,6 +23,7 @@ class ServiceController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		$services = $this->service->all(
 			limit: $page->getMetaValue('items_per_page'),
@@ -41,6 +42,7 @@ class ServiceController extends Controller
 
 		//set seo items
 		$this->setSeo($service->seo);
+		$this->setPageTitle($service->seo->title);
 
 		return view('front.contents.services.detail', compact('service'));
 	}

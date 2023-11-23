@@ -23,6 +23,8 @@ class InsuranceController extends Controller
 		$insurances = $this->service->all(relations: ['categories']);
 		$categories = $this->categoryService->all(TypeEnum::Insurance, true);
 
+		$this->setPageTitle(__('front/insurance.plural'));
+
 		return view('front.contents.insurances.index', compact('insurances', 'categories'));
 	}
 

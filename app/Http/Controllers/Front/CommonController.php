@@ -30,6 +30,7 @@ class CommonController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		$galleries = $this->galleryService->all();
 
@@ -45,6 +46,7 @@ class CommonController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		return view('front.contents.contact.index', compact('page'));
 	}

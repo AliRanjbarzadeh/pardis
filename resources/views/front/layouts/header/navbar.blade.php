@@ -58,9 +58,9 @@
 						@include('front.layouts.header.menu-item', ['menu' => $menu])
 					@endforeach
 				</ul>
-				<button class="btn btn-primary btn-outline ms-5 px-3 py-2">
+				<a href="https://rpn.one/pardisoncology/booking" class="btn btn-primary btn-outline ms-5 px-3 py-2">
 					نوبت دهی آنلاین
-				</button>
+				</a>
 			</div>
 			<div class="hidden lg:block">
 				<img src="{{ asset('assets/front/images/logo.png') }}" alt="{{ config('app.name') }}">

@@ -29,4 +29,9 @@ class Controller extends BaseController
 	{
 		$this->model = $model;
 	}
+
+	public function setPageTitle(string $pageTitle)
+	{
+		View::share('pageTitle', $pageTitle);
+	}
 }

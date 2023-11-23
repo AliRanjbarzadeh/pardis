@@ -43,6 +43,7 @@ class HomeController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		//sliders
 		$sliders = $this->sliderService->all(SliderPageEnum::Home);

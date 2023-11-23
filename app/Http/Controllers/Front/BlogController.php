@@ -29,6 +29,7 @@ class BlogController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		$blogs = $this->service->paginated(
 			perPage: $page->getMetaValue('items_per_page'),

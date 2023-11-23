@@ -17,7 +17,11 @@
 	@vite('resources/css/app.scss')
 	@stack('styles')
 
-	<title>{{ config('app.name') . ' | ' . ($pageTitle ?? '') }}</title>
+	@if(request()->routeIs('index'))
+		<title>{{ $pageTitle ?? config('app.name') }}</title>
+	@else
+		<title>{{ ($pageTitle ?? '') . ' | ' . config('app.name') }}</title>
+	@endif
 </head>
 <body>
 <div class="flex flex-col justify-between min-h-[100vh]">

@@ -29,6 +29,7 @@ class DoctorController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		$doctors = $this->service->paginated(
 			perPage: $page->getMetaValue('items_per_page'),
@@ -58,6 +59,7 @@ class DoctorController extends Controller
 
 		//set seo items
 		$this->setSeo($doctor->seo);
+		$this->setPageTitle($doctor->seo->title);
 
 		return view('front.contents.doctors.detail', compact('doctor'));
 	}
@@ -70,6 +72,7 @@ class DoctorController extends Controller
 
 		//set seo items
 		$this->setSeo($speciality->seo);
+		$this->setPageTitle($speciality->seo->title);
 
 		$doctors = $this->service->paginated(
 			perPage: $page->getMetaValue('items_per_page'),

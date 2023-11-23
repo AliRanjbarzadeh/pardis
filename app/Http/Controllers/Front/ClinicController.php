@@ -24,6 +24,7 @@ class ClinicController extends Controller
 
 		//set seo items
 		$this->setSeo($page->seo);
+		$this->setPageTitle($page->seo->title);
 
 		$clinics = $this->service->paginated(
 			perPage: $page->getMetaValue('items_per_page'),
@@ -42,6 +43,7 @@ class ClinicController extends Controller
 
 		//set seo items
 		$this->setSeo($clinic->seo);
+		$this->setPageTitle($clinic->seo->title);
 
 		return view('front.contents.clinics.detail', compact('clinic'));
 	}
