@@ -1,0 +1,19 @@
+<?php
+
+namespace App\DataTransferObjects;
+
+class {{ class }}Dto
+{
+	public function __construct(
+		{{ params }}
+	)
+	{
+	}
+
+	public function toArray(): array
+	{
+		return [
+			{{ params_array }}
+		];
+	}
+}

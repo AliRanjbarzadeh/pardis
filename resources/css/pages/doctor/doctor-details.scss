@@ -1,0 +1,15 @@
+.top-banner {
+  background: url('../../../../public/assets/front/images/test/doctors/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sticky-menu {
+  .menu-item {
+    @apply border-0 border-primary-950 block;
+    &.active {
+      @apply text-primary-950 border-b-2;
+    }
+  }
+}

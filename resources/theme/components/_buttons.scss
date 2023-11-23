@@ -1,0 +1,41 @@
+.btn {
+	@apply h-fit cursor-pointer inline-flex items-center justify-center transition-colors;
+
+	&:not(.rounded-full):not(.rounded-none) {
+		@apply rounded-lg;
+	}
+
+	&.btn-primary {
+		&:not(.btn-outline) {
+			@apply text-white bg-primary-950 hover:bg-[#9927ac];
+		}
+
+		&.btn-outline {
+			@apply border border-primary-950 text-primary-950 hover:bg-primary-950 hover:text-white;
+		}
+	}
+
+	&.btn-secondary {
+		&:not(.btn-outline) {
+			@apply text-white bg-secondary-950;
+		}
+
+		&.btn-outline {
+			@apply border border-secondary-950 text-secondary-950 hover:bg-secondary-950 hover:text-white;
+		}
+	}
+
+	&.btn-danger {
+		&:not(.btn-outline) {
+			@apply text-white bg-red-600;
+		}
+
+		&.btn-outline {
+			@apply border border-red-600 text-red-600;
+		}
+	}
+
+	&[disabled] {
+		@apply cursor-default opacity-50;
+	}
+}

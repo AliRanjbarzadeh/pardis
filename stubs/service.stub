@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Services;
+
+use App\DataTransferObjects\DatatablesFilterDto;
+use App\DataTransferObjects\{{ model }}Dto;
+use App\Models\{{ model }};
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
+
+class {{ model }}Service
+{
+	public function __construct(
+		protected DatatableService $datatableService,
+	)
+	{
+	}
+
+	public function datatable(DatatablesFilterDto $dto): JsonResponse
+	{
+		${{ model_plural }} = {{ model }}::query()
+			->regexpSearch($dto->term, ['title', 'description'])
+			->dateRangeSearch($dto->fromDate, $dto->toDate)
+			->orderBy('priority');
+
+		return $this->datatableService->datatable(${{ model_plural }}, '{{ model_plural }}')
+			->toJson();
+	}
+
+	public function store({{ model }}Dto $dto): ?{{ model }}
+	{
+		try {
+			DB::beginTransaction();
+
+			${{ model_var }} = {{ model }}::create($dto->toArray());
+
+			DB::commit();
+
+			return ${{ model_var }};
+		} catch (\Exception $e) {
+			DB::rollBack();
+			return null;
+		}
+	}
+
+	public function update({{ model }} ${{ model_var }}, {{ model }}Dto $dto): bool
+	{
+		try {
+			DB::beginTransaction();
+
+			${{ model_var }}->update($dto->toArray());
+
+			DB::commit();
+
+			return true;
+		} catch (\Exception $e) {
+			DB::rollBack();
+			return false;
+		}
+	}
+}

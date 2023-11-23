@@ -1,0 +1,22 @@
+//libs
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "swiper/scss";
+@import "swiper/scss/effect-fade";
+@import "swiper/scss/pagination";
+@import "/node_modules/video.js/dist/video-js.min.css";
+@import "/node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
+
+// fonts
+
+@import "@theme/fonts";
+
+// theme
+
+@import "@theme/public";
+@import "@theme/components/header";
+@import "@theme/components/buttons";
+@import "@theme/components/swiper-pagination";
+@import "@theme/components/radio-button";

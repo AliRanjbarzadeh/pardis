@@ -1,0 +1,14 @@
+.swiper-pagination {
+	.swiper-pagination-bullet {
+		&:not(.swiper-pagination-bullet-active) {
+			@apply bg-gray-100;
+		}
+
+		&.swiper-pagination-bullet-active {
+			@apply bg-primary-950 w-[25px];
+		}
+
+		@apply opacity-100 rounded-full transition-all;
+	}
+	@apply relative;
+}

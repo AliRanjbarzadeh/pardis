@@ -1,0 +1,27 @@
+/* The container */
+.radio-container {
+	@apply block relative cursor-pointer select-none ps-6;
+	
+	input {
+		@apply absolute opacity-0 cursor-pointer;
+	}
+
+	input {
+		&:checked {
+			&~.checkmark {
+				@apply border-primary-950;
+				&:after {
+					@apply scale-100;
+				}
+			}
+		}
+	}
+
+	.checkmark {
+		@apply ltr:left-0 rtl:right-0 border-2 border-gray-400 absolute h-4 w-4 bg-white m-auto rounded-[50%] inset-y-0;
+		&:after {
+			content: "";
+			@apply bg-primary-950 rounded-[50%] w-2 h-2 inset-0 m-auto absolute scale-0 transform transition-transform;
+		}
+	}
+}

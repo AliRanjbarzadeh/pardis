@@ -1,0 +1,1 @@
+<input type="number" class="form-control w-px-100" data-input="priority" data-id="{{ $model->id }}" value="{{ $model->priority }}" min="{{ config('global.input.priority.min') }}" max="{{ config('global.input.priority.max') }}">

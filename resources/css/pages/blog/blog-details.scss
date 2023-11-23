@@ -1,0 +1,10 @@
+.content {
+    p {
+       @apply leading-7;
+    }
+}
+.content-container {
+    a {
+        @apply text-secondary-950 hover:underline;
+    }
+}

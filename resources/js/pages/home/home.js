@@ -1,0 +1,10 @@
+import '@sharedJs/accordion.js';
+import './image-slider.js';
+import './clinics-slider.js';
+import './doctors-slider.js';
+import './faqs.js';
+import './insurances-slider.js';
+import './blog-latest.js';
+import './testimonial.js'
+import '@sharedJs/tabs.js';
+import '@sharedJs/map.js';
