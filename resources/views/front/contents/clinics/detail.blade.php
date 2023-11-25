@@ -33,8 +33,13 @@
 				@endif
 			</aside>
 		</div>
-		@include('front.shared.doctors.doctors-section', ['title' => __('front/clinic.words.doctors'), 'doctors' => $clinic->doctors])
-		@include('front.shared.insurances.insurances-section', ['title' => __('front/clinic.words.insurances'), 'insurances' => $clinic->insurances])
+		@if($clinic->doctors->isNotEmpty())
+			@include('front.shared.doctors.doctors-section', ['title' => __('front/clinic.words.doctors'), 'doctors' => $clinic->doctors])
+		@endif
+
+		@if($clinic->insurances->isNotEmpty())
+			@include('front.shared.insurances.insurances-section', ['title' => __('front/clinic.words.insurances'), 'insurances' => $clinic->insurances])
+		@endif
 	</main>
 @endsection
 

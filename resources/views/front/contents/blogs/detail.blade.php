@@ -28,16 +28,18 @@
 						@include('front.shared.tags-card', ['tags' => $blog->tags])
 					@endif
 				</div>
-				<hr class="border-gray-200 w-full mt-3">
-				<div class="mt-5 grid grid-cols-1 sm:grid-cols-2 px-5 pb-8">
-					@if($blog->doctors->isNotEmpty())
-						@include('front.shared.doctor-related-card', ['doctor' => $blog->doctors->first()])
-					@endif
+				@if($blog->doctors->isNotEmpty() || $blog->clinics->isNotEmpty())
+					<hr class="border-gray-200 w-full mt-3">
+					<div class="mt-5 grid grid-cols-1 sm:grid-cols-2 px-5 pb-8">
+						@if($blog->doctors->isNotEmpty())
+							@include('front.shared.doctor-related-card', ['doctor' => $blog->doctors->first()])
+						@endif
 
-					@if($blog->clinics->isNotEmpty())
-						@include('front.shared.clinic-related-card', ['clinic' => $blog->clinics->first()])
-					@endif
-				</div>
+						@if($blog->clinics->isNotEmpty())
+							@include('front.shared.clinic-related-card', ['clinic' => $blog->clinics->first()])
+						@endif
+					</div>
+				@endif
 			</div>
 
 

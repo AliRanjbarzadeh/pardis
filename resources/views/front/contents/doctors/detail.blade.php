@@ -72,31 +72,47 @@
 								@lang('front/doctor.words.biography')
 							</a>
 						</li>
-						<li>
-							<a class="menu-item text-center lg:px-8 py-4" href="#section2">
-								@lang('front/doctor.words.resumes')
-							</a>
-						</li>
-						<li>
-							<a class="menu-item text-center lg:px-8 py-4" href="#section3">
-								@lang('front/doctor.words.clinics')
-							</a>
-						</li>
-						<li>
-							<a class="menu-item text-center lg:px-8 py-4" href="#section4">
-								@lang('front/doctor.words.galleries')
-							</a>
-						</li>
-						<li>
-							<a class="menu-item text-center lg:px-8 py-4" href="#section5">
-								@lang('front/doctor.words.insurances')
-							</a>
-						</li>
-						<li>
-							<a class="menu-item text-center lg:px-8 py-4" href="#section6">
-								@lang('front/doctor.words.blogs')
-							</a>
-						</li>
+
+						@if(!empty($doctor->resumes))
+							<li>
+								<a class="menu-item text-center lg:px-8 py-4" href="#section2">
+									@lang('front/doctor.words.resumes')
+								</a>
+							</li>
+						@endif
+
+						@if($doctor->clinics->isNotEmpty())
+							<li>
+								<a class="menu-item text-center lg:px-8 py-4" href="#section3">
+									@lang('front/doctor.words.clinics')
+								</a>
+							</li>
+						@endif
+
+						@if($doctor->getMediaByNames('gallery')->isNotEmpty())
+							<li>
+								<a class="menu-item text-center lg:px-8 py-4" href="#section4">
+									@lang('front/doctor.words.galleries')
+								</a>
+							</li>
+						@endif
+
+						@if($doctor->insurances->isNotEmpty())
+							<li>
+								<a class="menu-item text-center lg:px-8 py-4" href="#section5">
+									@lang('front/doctor.words.insurances')
+								</a>
+							</li>
+						@endif
+
+						@if($doctor->blogs->isNotEmpty())
+							<li>
+								<a class="menu-item text-center lg:px-8 py-4" href="#section6">
+									@lang('front/doctor.words.blogs')
+								</a>
+							</li>
+						@endif
+
 						<li>
 							<a class="menu-item text-center lg:px-8 py-4" href="#section7">
 								@lang('front/doctor.words.comments')
@@ -113,46 +129,54 @@
 				<p class="leading-8 text-justify text-base">{!! $doctor->full_description !!}</p>
 			</section>
 
-			<section id="section2" class="section">
-				<div class="bg-white">
-					<div class="custom-container pt-12 pb-8">
-						@include('front.shared.section-title', [
-							'title' => __('front/doctor.sentences.resumes', ['name' => $doctor->full_name]),
-							'class' => 'mb-4'
-						])
-						<ul class="text-base">
-							@if(!is_null($doctor->getMetaValue('resumes')))
-								@foreach($doctor->getMetaValue('resumes') as $resume)
+			@if(!is_null($doctor->resumes))
+				<section id="section2" class="section">
+					<div class="bg-white">
+						<div class="custom-container pt-12 pb-8">
+							@include('front.shared.section-title', [
+								'title' => __('front/doctor.sentences.resumes', ['name' => $doctor->full_name]),
+								'class' => 'mb-4'
+							])
+							<ul class="text-base">
+								@foreach($doctor->resumes as $resume)
 									<li class="flex items-center mb-2">
 										<span class="material-symbols-outlined text-primary-950 me-4 text-2xl">done</span>
 										<span>{{ $resume['title'] }}</span>
 									</li>
 								@endforeach
-							@endif
-						</ul>
+							</ul>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			@endif
 
-			<section id="section3" class="section pt-12">
-				@include('front.contents.doctors.clinics-section', ['clinics' => $doctor->clinics])
-			</section>
+			@if($doctor->clinics->isNotEmpty())
+				<section id="section3" class="section pt-12">
+					@include('front.contents.doctors.clinics-section', ['clinics' => $doctor->clinics])
+				</section>
+			@endif
 
-			<section id="section4" class="section bg-white">
-				<div class="custom-container">
-					@include('front.shared.photo-gallery.photo-gallery', ['media' => $doctor->getMediaByNames('gallery')])
-				</div>
-			</section>
+			@if($doctor->getMediaByNames('gallery')->isNotEmpty())
+				<section id="section4" class="section bg-white">
+					<div class="custom-container">
+						@include('front.shared.photo-gallery.photo-gallery', ['media' => $doctor->getMediaByNames('gallery')])
+					</div>
+				</section>
+			@endif
 
-			<section id="section5" class="section custom-container">
-				@include('front.shared.insurances.insurances-section', ['insurances' => $doctor->insurances])
-			</section>
+			@if($doctor->insurances->isNotEmpty())
+				<section id="section5" class="section custom-container">
+					@include('front.shared.insurances.insurances-section', ['insurances' => $doctor->insurances])
+				</section>
+			@endif
 
-			<section id="section6" class="section bg-white">
-				<div class="custom-container">
-					@include('front.contents.home.blogs.blog-latest-section', ['blogs' => $doctor->blogs])
-				</div>
-			</section>
+			@if($doctor->blogs->isNotEmpty())
+				<section id="section6" class="section bg-white">
+					<div class="custom-container">
+						@include('front.contents.home.blogs.blog-latest-section', ['blogs' => $doctor->blogs])
+					</div>
+				</section>
+			@endif
 
 			<section id="section7" class="section custom-container">
 				@include('front.shared.comments-section', ['comments' => $doctor->comments, 'count' => $doctor->comments_count, 'class' => 'pt-12'])
