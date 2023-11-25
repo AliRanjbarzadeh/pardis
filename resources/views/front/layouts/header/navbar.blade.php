@@ -71,5 +71,7 @@
 
 @include('front.layouts.header.mobile-nav')
 
-{{ \Diglactic\Breadcrumbs\Breadcrumbs::view('front.layouts.breadcrumb') }}
+@if(!request()->routeIs('index'))
+	{{ \Diglactic\Breadcrumbs\Breadcrumbs::view('front.layouts.breadcrumb') }}
+@endif
 
