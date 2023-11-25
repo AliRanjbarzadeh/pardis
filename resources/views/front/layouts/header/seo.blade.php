@@ -41,24 +41,6 @@
 	<meta name="abstract" content="{{ $seo->description }}"/>
 @endif
 
-{{ \Diglactic\Breadcrumbs\Breadcrumbs::view('front.layouts.breadcrumb-json') }}
-
-@if(isset($breadcrumbs) && !empty($breadcrumbs))
-	<!-- #### Breadcrumbs #### -->
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org/",
-			"@type": "BreadcrumbList",
-			"itemListElement": [
-		@foreach($breadcrumbs as $breadcrumb)
-			{
-			 "@type": "ListItem",
-			 "position": {{ $loop->iteration }},
-		 "name": "{{ $breadcrumb['title'] }}",
-		 "item": "{{ $breadcrumb['link'] }}"
-		}{{ $loop->last ? '' : ',' }}
-		@endforeach
-		]
-	}
-	</script>
+@if(!request()->routeIs('index'))
+	{{ \Diglactic\Breadcrumbs\Breadcrumbs::view('front.layouts.breadcrumb-json') }}
 @endif
