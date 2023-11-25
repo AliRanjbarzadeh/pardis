@@ -188,7 +188,7 @@ class BlogService
 
 		$blogs->regexpSearch($term, ['title', 'description']);
 
-		return $blogs->paginate($perPage)->withQueryString();
+		return $blogs->paginate($perPage)->withQueryString()->onEachSide(1);
 	}
 
 	public function findByIds(?array $ids, ?array $relations = null): Collection
