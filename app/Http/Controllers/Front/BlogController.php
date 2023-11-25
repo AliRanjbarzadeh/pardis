@@ -90,7 +90,7 @@ class BlogController extends Controller
 			categoryId: $category->id,
 			term: $request->input('search')
 		);
-		$topItems = $this->service->findByIds(Arr::pluck($page->getMetaValue('top_items'), 'id'), ['media', 'seo']);
+		$topItems = $this->service->findByIds(Arr::pluck($page->getMetaValue('top_items') ?? [], 'id'), ['media', 'seo']);
 		$categories = $this->categoryService->sidebarBlog();
 
 
