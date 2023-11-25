@@ -60,11 +60,7 @@ class BlogController extends Controller
 
 		$page = $this->pageService->find(PageTypeEnum::Blogs, ['metas']);
 
-		if (!is_null($page->getMetaValue('top_items'))) {
-			$topItems = $this->service->findByIds(Arr::pluck($page->getMetaValue('top_items'), 'id'), ['media', 'seo']);
-		} else {
-			$topItems = collect();
-		}
+		$topItems = $this->service->findByIds(Arr::pluck($page->getMetaValue('top_items') ?? [], 'id'), ['media', 'seo']);
 		$categories = $this->categoryService->sidebarBlog();
 
 		$comments = $blog->comments()->whereStatus(StatusEnum::Approved)->latest()->paginate();
