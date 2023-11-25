@@ -1,2 +1,12 @@
+# START YOAST BLOCK
+# ---------------------------
+# START YOAST BLOCK
+# ---------------------------
+
 User-agent: *
-Disallow:
+Disallow: /
+Disallow: *
+
+
+# ---------------------------
+# END YOAST BLOCK

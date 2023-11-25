@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="baseUrl" content="{{ url('') }}">
+	<META NAME="robots" CONTENT="noindex,nofollow">
 
 	@include('front.layouts.header.seo')
 
