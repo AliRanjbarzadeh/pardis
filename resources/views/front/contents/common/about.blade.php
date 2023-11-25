@@ -13,7 +13,10 @@
 				<p class="leading-10 text-base">{{ $page->description }}</p>
 			</div>
 		</div>
-		@include('front.shared.photo-gallery.photo-gallery', ['galleries' => $galleries, 'isGallery' => true])
+
+		@if($galleries->isNotEmpty())
+			@include('front.shared.photo-gallery.photo-gallery', ['galleries' => $galleries, 'isGallery' => true])
+		@endif
 	</main>
 @endsection
 
