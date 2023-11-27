@@ -1,28 +1,75 @@
+@layer components {
+	.html-content {
+		iframe {
+			@apply max-w-full my-2;
+		}
+
+		h1 {
+			@apply text-3xl font-semibold text-blue-800 mb-3 mt-6;
+		}
+
+		h2 {
+			@apply text-2xl font-semibold text-blue-800 mb-3 mt-6;
+		}
+
+		h3 {
+			@apply text-xl font-semibold text-blue-800 mb-3 mt-6;
+		}
+
+		h4 {
+			@apply text-lg font-semibold text-blue-800 mb-3 mt-6;
+		}
+
+		h5 {
+			@apply text-base font-semibold text-blue-800 mb-3 mt-6;
+		}
+
+		p {
+			@apply mb-3 leading-8 text-gray-700;
+		}
+
+		a {
+			@apply text-blue-600 font-semibold;
+		}
+
+		img {
+			@apply my-3 rounded-lg block;
+		}
+
+		ul,
+		ol {
+			@apply mb-4 list-disc list-inside;
+		}
+	}
+}
+
 body {
 	@apply bg-gray-50 p-0 m-0 font-IRANSans text-sm text-gray-800;
 }
 
 .custom-container {
-	@apply mx-auto px-4 container xl:max-w-screen-xl ;
+	@apply mx-auto px-4 container xl:max-w-screen-xl;
 }
 
 .material-symbols-outlined {
 	&:not(.outline-icon) {
 		font-variation-settings:
-		'FILL' 1,
-		'wght' 400,
-		'GRAD' 0,
-		'opsz' 48
+			'FILL' 1,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 48
 	}
+
 	&.outline-icon {
 		font-variation-settings:
-  		'FILL' 0,
-  		'wght' 400,
-  		'GRAD' 0,
-  		'opsz' 48
+			'FILL' 0,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 48
 	}
-	
+
 }
+
 [dir="rtl"] {
 	.material-symbols-outlined {
 		direction: rtl;
@@ -37,13 +84,17 @@ body {
 
 .btn-overflow {
 	@apply hidden;
-	&.less,&.more {
+
+	&.less,
+	&.more {
 		@apply block;
-	 }	
+	}
 }
 
-input, textarea {
+input,
+textarea {
 	@apply outline-none transition-shadow;
+
 	&:focus {
 		box-shadow: 0 0 0px 2px rgba(121, 13, 140, 0.2);
 	}

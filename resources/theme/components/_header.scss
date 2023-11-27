@@ -1,10 +1,10 @@
 nav {
 	.menu-item {
 		a {
-			@apply md:text-xs lg:text-base p-2 hover:text-primary-950 relative after:w-full after:h-[2px] after:bg-primary-950 after:absolute after:bottom-0 after:inset-x-0 after:opacity-0 after:transition-all;
+			@apply opacity-70 md:text-xs lg:text-base px-2 py-3 hover:text-primary-950 relative after:w-full after:h-[2px] after:bg-primary-950 after:absolute after:bottom-0 after:inset-x-0 after:opacity-0 after:transition-all;
 
 			&.active {
-				@apply font-bold text-primary-950 after:opacity-100;
+				@apply opacity-100 font-bold text-primary-950 after:opacity-100;
 			}
 		}
 

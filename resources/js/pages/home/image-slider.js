@@ -28,6 +28,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		pagination: {
 			el: '.images-swiper-pagination',
 			type: 'bullets',
+			clickable: true
 		},
 	});
 });

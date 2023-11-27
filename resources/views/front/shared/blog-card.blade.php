@@ -2,7 +2,7 @@
 	<div>
 		<img class="rounded-md h-28 md:h-40 w-full object-cover mb-3" src="{{ $blog->feature_image->medium }}" alt="{{ $blog->title }}">
 
-		<h4 class="font-bold px-1 line-clamp-2 mb-2">{{ $blog->title }}</h4>
+		<h4 class="font-bold px-1 mb-2 line-clamp-2 leading-4 h-8 md:leading-5 md:h-10">{{ $blog->title }}</h4>
 	</div>
 
 
