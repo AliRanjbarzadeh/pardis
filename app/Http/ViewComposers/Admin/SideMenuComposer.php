@@ -4,14 +4,14 @@ namespace App\Http\ViewComposers\Admin;
 
 use App\Http\ViewComposers\Admin\Menus\BlogMenu;
 use App\Http\ViewComposers\Admin\Menus\ClinicMenu;
-use App\Http\ViewComposers\Admin\Menus\CommonMenus;
 use App\Http\ViewComposers\Admin\Menus\CommunicationMenu;
 use App\Http\ViewComposers\Admin\Menus\DoctorMenu;
 use App\Http\ViewComposers\Admin\Menus\GalleryMenu;
-use App\Http\ViewComposers\Admin\Menus\HomeMenu;
 use App\Http\ViewComposers\Admin\Menus\InsuranceMenu;
+use App\Http\ViewComposers\Admin\Menus\PagesMenus;
 use App\Http\ViewComposers\Admin\Menus\SeparatorMenu;
 use App\Http\ViewComposers\Admin\Menus\ServiceMenu;
+use App\Http\ViewComposers\Admin\Menus\SettingsMenus;
 use App\Http\ViewComposers\Admin\Menus\SpecialityMenu;
 use App\Http\ViewComposers\Admin\Menus\TestimonialMenu;
 use Illuminate\View\View;
@@ -66,16 +66,11 @@ class SideMenuComposer
 			//Testimonials
 			TestimonialMenu::getMenu($request),
 
-			//Separator
-			SeparatorMenu::getMenu($request, __('admin/page.plural')),
-
-			//Home
-			HomeMenu::getMenu($request),
-
 			//Communications
 			CommunicationMenu::getMenu($request),
 
-		])->merge(CommonMenus::getMenu($request));
+		])->merge(PagesMenus::getMenu($request))
+			->merge(SettingsMenus::getMenu($request));
 
 		$view->with('menus', $menus);
 	}

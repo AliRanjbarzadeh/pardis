@@ -59,6 +59,13 @@ class ContactFormDataTable extends BaseDataTable
 				->exportable()
 				->printable()
 				->type('date'),
+
+			Column::make('action')
+				->title(__('admin/global.fields.tools'))
+				->orderable(false)
+				->printable(false)
+				->exportable(false)
+				->searchable(false),
 		];
 	}
 }

@@ -32,11 +32,12 @@ class InsuranceService
 			->with('media')
 			->newQuery();
 
-		return $this->datatableService->datatable($insurances, 'insurances')
-			->addColumn('image', function (Insurance $insurance) {
-				return '<img class="w-px-50" src="' . $insurance->getMediumByName('featureImage')->thumbnail . '" >';
-			})
-			->toJson();
+		return $this->datatableService->datatable(
+			query: $insurances,
+			name: 'insurances'
+		)->addColumn('image', function (Insurance $insurance) {
+			return '<img class="w-px-50" src="' . $insurance->getMediumByName('featureImage')->thumbnail . '" >';
+		})->toJson();
 	}
 
 	/**

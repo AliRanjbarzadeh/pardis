@@ -23,8 +23,10 @@ class SocialNetworkTypeService
 			->dateRangeSearch($dto->fromDate, $dto->toDate)
 			->orderBy('priority');
 
-		return $this->datatableService->datatable($socialnetworktypes, 'socialNetworkTypes')
-			->toJson();
+		return $this->datatableService->datatable(
+			query: $socialnetworktypes,
+			name: 'socialNetworkTypes'
+		)->toJson();
 	}
 
 	public function store(SocialNetworkTypeDto $dto): ?SocialNetworkType

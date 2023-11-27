@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ContactFormDataTable;
+use App\DataTransferObjects\ContactFormResponseDto;
 use App\DataTransferObjects\DatatablesFilterDto;
 use App\DataTransferObjects\PageDto;
 use App\Enums\PageTypeEnum;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ContactFormResponseRequest;
 use App\Http\Requests\Admin\DatatablesFilterRequest;
 use App\Http\Requests\Admin\PageRequest;
+use App\Models\ContactForm;
 use App\Services\ContactService;
 use App\Services\PageService;
 use App\Services\SocialNetworkTypeService;
@@ -41,9 +44,29 @@ class ContactController extends Controller
 		return $this->service->datatable($dto);
 	}
 
+	public function show(ContactForm $contact)
+	{
+		return view('admin.contents.contact.answer', compact('contact'));
+	}
+
 	/*==================Create====================*/
 
 	/*==================Edit====================*/
+	public function update(ContactFormResponseRequest $request, ContactForm $contact)
+	{
+		if (!$this->service->answer(new ContactFormResponseDto($request->input('answer')), $contact)) {
+			return back()->withInput()->withErrors(['failed' => __('admin/global.errors.store')]);
+		}
+		return redirect(route('admin.contacts.index'))->with('success', __('admin/global.successes.store'));
+	}
+
+	public function destroy(ContactForm $contact)
+	{
+		if ($contact->delete()) {
+			return response()->json(['message' => __('admin/global.successes.delete')]);
+		}
+		return response()->json(['message' => __('admin/global.errors.delete')], 400);
+	}
 
 	/*==================Settings====================*/
 	public function settings()

@@ -193,7 +193,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 			Route::settings(ContactController::class);
 		});
-		Route::resource('contacts/', ContactController::class, ['trailingSlashExcept' => 'destroy'])->except('create', 'edit', 'update', 'store');
+		Route::resource('contacts/', ContactController::class, [
+			'trailingSlashExcept' => 'destroy',
+			'parameters' => [
+				'contact' => 'contactForm',
+			],
+		])->except('create', 'edit', 'store');
 
 		//Footer
 		Route::prefix('footer')->name('footer.')->group(function () {

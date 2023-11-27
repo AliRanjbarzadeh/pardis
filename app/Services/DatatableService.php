@@ -3,12 +3,13 @@
 namespace App\Services;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Yajra\DataTables\EloquentDatatable;
 use Yajra\DataTables\Facades\DataTables;
 
 class DatatableService
 {
-	public function datatable($query, string $name, bool $hasDefaultActions = true, ?array $customActions = null, ?array $urlParams = null, bool $hasPriority = false): EloquentDatatable
+	public function datatable($query, string $name, bool $hasDefaultActions = true, ?array $customActions = null, ?array $urlParams = null, bool $hasPriority = false, array $defaultActions = ['edit', 'delete']): EloquentDatatable
 	{
 		$datatable = DataTables::eloquent($query)
 			->addIndexColumn()
@@ -17,7 +18,11 @@ class DatatableService
 				$query->orderBy('priority', $order);
 			});
 
-		$actions = $this->getDefaultActions($name, $hasDefaultActions);
+		$actions = $this->getDefaultActions(
+			name: $name,
+			hasDefaultActions: $hasDefaultActions,
+			defaultActions: $defaultActions
+		);
 
 		if (!is_null($customActions)) {
 			$actions = array_merge($customActions, $actions);
@@ -54,28 +59,34 @@ class DatatableService
 		return $datatable;
 	}
 
-	public function getDefaultActions(string $name, bool $hasDefaultActions = true): array
+	public function getDefaultActions(string $name, bool $hasDefaultActions = true, array $defaultActions = ['edit', 'delete']): array
 	{
 		if (!$hasDefaultActions) {
 			return [];
 		}
 
-		return [
-			//edit
-			[
+		$actions = [];
+
+
+		if (in_array('edit', $defaultActions)) {
+			$actions[] = [
 				'title' => __('admin/global.fields.edit'),
 				'url' => "admin.$name.edit",
 				'icon' => 'bx bx-edit-alt',
 				'isButton' => false,
-			],
-			//delete
-			[
+			];
+		}
+
+		if (in_array('delete', $defaultActions)) {
+			$actions[] = [
 				'title' => __('admin/global.actions.delete'),
 				'url' => "admin.$name.destroy",
 				'icon' => 'bx bx-trash text-danger',
 				'onclick' => 'deleteItem(this);',
 				'isButton' => true,
-			],
-		];
+			];
+		}
+
+		return $actions;
 	}
 }

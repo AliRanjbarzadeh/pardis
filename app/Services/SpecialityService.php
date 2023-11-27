@@ -25,8 +25,10 @@ class SpecialityService
 			->regexpSearch($dto->term, ['title', 'description'])
 			->dateRangeSearch($dto->fromDate, $dto->toDate);
 
-		return $this->datatableService->datatable($specialities, 'specialities')
-			->toJson();
+		return $this->datatableService->datatable(
+			query: $specialities,
+			name: 'specialities'
+		)->toJson();
 	}
 
 	public function store(SpecialityDto $dto): ?Speciality

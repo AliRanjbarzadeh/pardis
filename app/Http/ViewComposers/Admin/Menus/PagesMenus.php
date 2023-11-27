@@ -6,12 +6,18 @@ use App\Http\ViewComposers\MenuInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
-class CommonMenus implements MenuInterface
+class PagesMenus implements MenuInterface
 {
 
 	public static function getMenu(Request $request, string $title = ''): Collection
 	{
 		return collect([
+			//Separator
+			SeparatorMenu::getMenu($request, __('admin/page.plural')),
+
+			//Home
+			HomeMenu::getMenu($request),
+
 			collect([
 				'href' => route('admin.about.index'),
 				'is_active' => $request->routeIs('admin.about.index'),
@@ -37,21 +43,6 @@ class CommonMenus implements MenuInterface
 						'is_active' => $request->routeIs('admin.contacts.settings.index'),
 						'name' => __('admin/setting.singular'),
 						'i18n' => 'Contacts Setting',
-					]),
-				]),
-			]),
-			collect([
-				'href' => 'javascript:void(0);',
-				'is_active' => $request->routeIs('admin.footer.*'),
-				'icon' => 'bx bx-cog',
-				'name' => __('admin/setting.singular'),
-				'i18n' => 'Settings',
-				'children' => collect([
-					collect([
-						'href' => route('admin.footer.settings.index'),
-						'is_active' => $request->routeIs('admin.footer.settings.index'),
-						'name' => __('admin/setting.words.footer.singular'),
-						'i18n' => 'Settings Footer',
 					]),
 				]),
 			]),

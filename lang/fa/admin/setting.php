@@ -28,6 +28,7 @@ return [
 
 	//Words
 	'words' => [
+		'public' => 'عمومی',
 		'footer' => [
 			'singular' => 'فوتر',
 		],
