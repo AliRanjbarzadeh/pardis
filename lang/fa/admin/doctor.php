@@ -17,6 +17,10 @@ return [
 		'home' => [
 			'title' => 'عنوان پزشکان برتر',
 		],
+		'dataTable' => [
+			'title' => 'نام دکتر',
+			'model_key' => 'commentable.full_name',
+		],
 	],
 
 	//Placeholders

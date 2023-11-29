@@ -13,6 +13,10 @@ return [
 			'title' => 'عنوان خدمات',
 			'description' => 'توضیحات کوتاه خدمات',
 		],
+		'dataTable' => [
+			'title' => 'عنوان خدمت',
+			'model_key' => 'commentable.title',
+		],
 	],
 
 	//Placeholders

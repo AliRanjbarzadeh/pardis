@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\StatusEnum;
+use App\Helpers\General;
 use App\Traits\HasSearch;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -51,6 +52,16 @@ class Comment extends Model
 		}
 
 		return implode("", $name);
+	}
+
+	public function setUserAgentInfoAttribute($value): void
+	{
+		$this->attributes['user_agent_info'] = General::toJson($value);
+	}
+
+	public function getUserAgentInfoAttribute($value): mixed
+	{
+		return General::fromJson($value, true);
 	}
 
 	/*=============Relations==============*/

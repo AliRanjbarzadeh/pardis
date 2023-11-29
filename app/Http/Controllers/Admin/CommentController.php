@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\DatatablesFilterRequest;
 use App\Models\Comment;
 use App\Services\CommentService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CommentController extends Controller
 {
@@ -23,6 +24,10 @@ class CommentController extends Controller
 	public function all(Request $request, CommentAllDataTable $dataTable)
 	{
 		$dataTable->setType($request->segment(2));
+		$dataTable->setCommentable([
+			'title' => __('admin/' . Str::singular($request->segment(2)) . '.fields.dataTable.title'),
+			'model_key' => __('admin/' . Str::singular($request->segment(2)) . '.fields.dataTable.model_key'),
+		]);
 		return $dataTable->render('admin.contents.datatable');
 	}
 

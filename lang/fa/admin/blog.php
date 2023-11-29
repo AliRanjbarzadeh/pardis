@@ -11,6 +11,10 @@ return [
 		'home' => [
 			'title' => 'عنوان مقالات',
 		],
+		'dataTable' => [
+			'title' => 'عنوان مقاله',
+			'model_key' => 'commentable.title',
+		],
 	],
 
 	//Placeholders

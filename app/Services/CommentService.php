@@ -2,12 +2,15 @@
 
 namespace App\Services;
 
+use App\DataTransferObjects\CommentDto;
 use App\DataTransferObjects\DatatablesFilterDto;
 use App\Enums\CommentTypeEnum;
 use App\Enums\StatusEnum;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Doctor;
 use App\Models\Service;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 
 class CommentService
@@ -43,6 +46,11 @@ class CommentService
 		return $this->getDatatable($comments, $dto->type);
 	}
 
+	public function store(CommentDto $dto, Model $model): bool
+	{
+		return !is_null($model->addComment($dto));
+	}
+
 
 	/**
 	 * @param Comment $comment
@@ -68,6 +76,9 @@ class CommentService
 
 			case CommentTypeEnum::Blog:
 				return Blog::class;
+
+			case CommentTypeEnum::Doctor:
+				return Doctor::class;
 
 			default:
 				return '';

@@ -10,6 +10,7 @@ use Yajra\DataTables\Html\Column;
 class CommentAllDataTable extends BaseDataTable
 {
 	private string $type;
+	private array $commentable;
 
 	public function getType(): string
 	{
@@ -19,6 +20,16 @@ class CommentAllDataTable extends BaseDataTable
 	public function setType(string $type): void
 	{
 		$this->type = $type;
+	}
+
+	public function setCommentable(array $commentable): void
+	{
+		$this->commentable = $commentable;
+	}
+
+	public function getCommentable(): array
+	{
+		return $this->commentable;
 	}
 
 	public function html(): HtmlBuilder
@@ -60,8 +71,8 @@ class CommentAllDataTable extends BaseDataTable
 				->printable()
 				->searchable(false),
 
-			Column::make('commentable.title')
-				->title(__('admin/service.fields.title'))
+			Column::make($this->getCommentable()['model_key'])
+				->title($this->getCommentable()['title'])
 				->orderable(false)
 				->exportable()
 				->printable()
