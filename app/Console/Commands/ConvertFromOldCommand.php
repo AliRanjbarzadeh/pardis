@@ -16,9 +16,12 @@ use App\DataTransferObjects\SocialNetworkDto;
 use App\DataTransferObjects\SpecialityDto;
 use App\Enums\PageTypeEnum;
 use App\Enums\SliderPageEnum;
+use App\Enums\StatusEnum;
 use App\Enums\TypeEnum;
 use App\Helpers\General;
+use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Doctor;
 use App\Models\Page;
 use App\Services\BlogService;
@@ -94,6 +97,10 @@ class ConvertFromOldCommand extends Command
 
 			case 'slider':
 				$this->slider();
+				break;
+
+			case 'comment':
+				$this->comments();
 				break;
 		}
 	}
@@ -446,6 +453,25 @@ class ConvertFromOldCommand extends Command
 				link: $slider->link,
 			));
 			$this->index += 1;
+		});
+	}
+
+	private function comments(): void
+	{
+		$comments = $this->db->table('blog_comment')->get();
+
+		$comments->map(function ($comment) {
+			Comment::create([
+				'status' => $comment->verified == 1 ? StatusEnum::Approved : StatusEnum::Pending,
+				'model_type' => Blog::class,
+				'model_id' => $comment->blog_id,
+				'full_name' => $comment->name,
+				'email' => $comment->email,
+				'body' => $comment->comment,
+				'created_at' => $comment->date,
+				'amp_url' => $comment->AMPurl,
+				'amp_key' => $comment->AMPuserkey,
+			]);
 		});
 	}
 }
