@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		const selectedInsurance = insurances.find((insurance) => parseInt(insurance.id) === parseInt(item.id));
 
 		document.getElementById('insuranceName').innerText = selectedInsurance.name;
+		document.getElementById('insuranceDescription').innerText = selectedInsurance.description;
 
 		resetCategories();
 

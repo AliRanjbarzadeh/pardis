@@ -37,6 +37,8 @@
 							</div>
 						@endforeach
 					</div>
+
+					<div id="insuranceDescription" class="my-3">{{ $insurances->first()->description }}</div>
 				@endif
 			</section>
 		</div>
