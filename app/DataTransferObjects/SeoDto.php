@@ -25,7 +25,7 @@ class SeoDto
 		return new self(
 			title: $data['title'],
 			description: $data['description'],
-			keywords: $data['keywords'],
+			keywords: $data['keywords'] ?? [],
 			link: $data['link']
 		);
 	}
@@ -35,7 +35,7 @@ class SeoDto
 		return new self(
 			title: $request->input('seo.title'),
 			description: $request->input('seo.description'),
-			keywords: $request->input('seo.keywords'),
+			keywords: $request->input('seo.keywords') ?? [],
 			link: $request->input('seo.link')
 		);
 	}
