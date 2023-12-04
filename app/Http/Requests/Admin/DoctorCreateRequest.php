@@ -33,7 +33,7 @@ class DoctorCreateRequest extends FormRequest
 			'featureImage' => 'required',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => 'required',
 			'insurances' => 'bail',
 			'images' => 'bail',

@@ -29,7 +29,7 @@ class ServiceCreateRequest extends FormRequest
 			'iconImage' => 'required',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => 'required',
 			'images' => 'bail',
 			'faqs' => 'bail',

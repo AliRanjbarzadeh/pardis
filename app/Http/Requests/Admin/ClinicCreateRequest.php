@@ -29,7 +29,7 @@ class ClinicCreateRequest extends FormRequest
 			'featureImage' => 'required',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => ['required', new SeoLinkRule(Clinic::class)],
 			'insurances' => 'bail',
 			'images' => 'bail',

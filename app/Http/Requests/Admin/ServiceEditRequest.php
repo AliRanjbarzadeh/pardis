@@ -29,7 +29,7 @@ class ServiceEditRequest extends FormRequest
 			'iconImage' => 'bail',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => 'required',
 			'images' => 'bail',
 			'faqs' => 'bail',

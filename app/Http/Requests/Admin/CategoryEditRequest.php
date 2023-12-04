@@ -30,7 +30,7 @@ class CategoryEditRequest extends FormRequest
 			'priority' => 'required',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => ['required', new SeoLinkRule(Category::class, $this->category->id)],
 		];
 	}

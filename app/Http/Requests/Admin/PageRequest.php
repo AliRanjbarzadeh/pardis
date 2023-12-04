@@ -27,7 +27,7 @@ class PageRequest extends FormRequest
 			'full_description' => 'bail',
 			'seo.title' => 'required',
 			'seo.description' => 'required',
-			'seo.keywords' => 'required',
+			'seo.keywords' => 'bail',
 			'seo.link' => 'required',
 			'metas' => 'bail',
 			'faqs' => 'bail',
