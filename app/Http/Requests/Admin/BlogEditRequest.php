@@ -30,10 +30,10 @@ class BlogEditRequest extends FormRequest
 			'title' => 'required',
 			'description' => 'required',
 			'featureImage' => 'bail',
-			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.title' => 'required_without:title',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
-			'seo.link' => ['required', new SeoLinkRule(Blog::class, $this->blog->id)],
+			'seo.link' => ['required_without:title', new SeoLinkRule(Blog::class, $this->blog->id)],
 			'tags' => 'bail',
 		];
 	}

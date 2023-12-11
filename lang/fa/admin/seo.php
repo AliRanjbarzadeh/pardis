@@ -9,6 +9,8 @@ return [
 		'description' => 'توضیحات سئو',
 		'keywords' => 'کلمات کلیدی',
 		'link' => 'لینک سئو',
+		'canonical' => 'لینک Canonical',
+		'robots' => 'معرفی به موتورهای جستجو',
 	],
 
 	//Placeholders
@@ -17,6 +19,7 @@ return [
 		'description' => 'مثلا: توضیحات سئو',
 		'keywords' => 'مثلا: کلمات کلیدی',
 		'link' => 'مثلا: لینک سئو',
+		'canonical' => 'مثلا: https://pardiscancer.com',
 	],
 
 	//Errors

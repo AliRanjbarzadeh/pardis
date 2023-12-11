@@ -65,6 +65,24 @@ class Seo extends Model
 		return $value;
 	}
 
+	public function getCanonicalAttribute(): ?string
+	{
+		if (!is_null($this->custom) && isset($this->custom['canonical'])) {
+			return $this->custom['canonical'];
+		}
+
+		return null;
+	}
+
+	public function getRobotsAttribute(): bool
+	{
+		if (!is_null($this->custom) && isset($this->custom['robots'])) {
+			return $this->custom['robots'] == 1;
+		}
+
+		return true;
+	}
+
 	/*=============Relations==============*/
 	public function modelable(): MorphTo
 	{

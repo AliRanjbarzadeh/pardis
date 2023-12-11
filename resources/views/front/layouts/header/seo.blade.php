@@ -15,7 +15,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#974784">
 <meta name="format-detection" content="telephone=no"/>
 <meta name="url" content="{{ request()->fullUrl() }}">
-<link rel="canonical" href="{{ request()->fullUrl() }}">
 
 @if(isset($seo))
 	<!-- ############# SEO ############ -->
@@ -39,6 +38,19 @@
 	<meta name="keywords" content="{{ $seo->keywords }}">
 	<meta name="description" content="{{ $seo->description }}">
 	<meta name="abstract" content="{{ $seo->description }}"/>
+
+	@if(!empty($seo->canonical))
+		<link rel="canonical" href="{{ $seo->canonical }}">
+	@else
+		<link rel="canonical" href="{{ request()->fullUrl() }}">
+	@endif
+
+	@if(!$seo->robots)
+		<meta name="robots" content="noindex,nofollow">
+	@endif
+
+@else
+	<link rel="canonical" href="{{ request()->fullUrl() }}">
 @endif
 
 @if(!request()->routeIs('index'))

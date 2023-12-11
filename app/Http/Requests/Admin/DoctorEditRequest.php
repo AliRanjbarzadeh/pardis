@@ -31,10 +31,10 @@ class DoctorEditRequest extends FormRequest
 			'full_description' => 'required',
 			'reservation_link' => 'required|url',
 			'featureImage' => 'bail',
-			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.title' => 'required_without_all:first_name,last_name',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
-			'seo.link' => 'required',
+			'seo.link' => 'required_without_all:first_name,last_name',
 			'insurances' => 'bail',
 			'images' => 'bail',
 			'work_hours' => 'bail',
@@ -55,10 +55,12 @@ class DoctorEditRequest extends FormRequest
 			'reservation_link.url' => __('admin/doctor.errors.reservation_link.url'),
 			'featureImage.required' => __('admin/global.errors.feature_image.required'),
 			'seo.title.required' => __('admin/seo.errors.title.required'),
+			'seo.title.required_without_all' => __('admin/seo.errors.title.required'),
 			'seo.description.required' => __('admin/seo.errors.description.required'),
 			'seo.keywords.required' => __('admin/seo.errors.keywords.required'),
 			'seo.keywords.array' => __('admin/seo.errors.keywords.array'),
 			'seo.link.required' => __('admin/seo.errors.link.required'),
+			'seo.link.required_without_all' => __('admin/seo.errors.link.required'),
 		];
 	}
 }

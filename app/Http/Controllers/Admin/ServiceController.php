@@ -8,7 +8,6 @@ use App\DataTransferObjects\PageDto;
 use App\DataTransferObjects\SeoDto;
 use App\DataTransferObjects\ServiceDto;
 use App\Enums\PageTypeEnum;
-use App\Helpers\General;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\DatatablesFilterRequest;
 use App\Http\Requests\Admin\PageRequest;
@@ -83,18 +82,11 @@ class ServiceController extends Controller
 
 	public function update(ServiceEditRequest $request, Service $service)
 	{
-		$seoDto = new SeoDto(
-			title: $request->input('seo.title'),
-			description: $request->input('seo.description'),
-			keywords: $request->input('seo.keywords'),
-			link: $request->input('seo.link')
-		);
-
 		$dto = (new ServiceDto(
 			title: $request->input('title'),
 			description: $request->input('description'),
 			fullDescription: $request->input('full_description', ''),
-			seo: $seoDto,
+			seo: SeoDto::fromRequest($request),
 			featureImage: $request->file('featureImage'),
 			iconImage: $request->file('iconImage'),
 		));

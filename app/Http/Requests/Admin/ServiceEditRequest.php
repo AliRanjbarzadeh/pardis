@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Admin;
 
+use App\Models\Service;
+use App\Rules\SeoLinkRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ServiceEditRequest extends FormRequest
@@ -27,10 +29,10 @@ class ServiceEditRequest extends FormRequest
 			'full_description' => 'bail',
 			'featureImage' => 'bail',
 			'iconImage' => 'bail',
-			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.title' => 'required_without:title',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
-			'seo.link' => 'required',
+			'seo.link' => ['required_without:title', new SeoLinkRule(Service::class, $this->service->id)],
 			'images' => 'bail',
 			'faqs' => 'bail',
 		];
@@ -43,10 +45,12 @@ class ServiceEditRequest extends FormRequest
 			'description.required' => __('admin/service.errors.description.required'),
 			'full_description.required' => __('admin/service.errors.full_description.required'),
 			'seo.title.required' => __('admin/seo.errors.title.required'),
+			'seo.title.required_without' => __('admin/seo.errors.title.required'),
 			'seo.description.required' => __('admin/seo.errors.description.required'),
 			'seo.keywords.required' => __('admin/seo.errors.keywords.required'),
 			'seo.keywords.array' => __('admin/seo.errors.keywords.array'),
 			'seo.link.required' => __('admin/seo.errors.link.required'),
+			'seo.link.required_without' => __('admin/seo.errors.link.required'),
 		];
 	}
 }

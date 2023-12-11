@@ -25,10 +25,10 @@ class GalleryEditRequest extends FormRequest
 			'title' => 'required',
 			'category_id' => 'required',
 			'featureImage' => 'bail',
-			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.title' => 'required_without:title',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
-			'seo.link' => 'required',
+			'seo.link' => 'required_without:title',
 		];
 	}
 
@@ -39,10 +39,12 @@ class GalleryEditRequest extends FormRequest
 			'category_id.required' => __('admin/gallery.errors.category_id.required'),
 			'featureImage.required' => __('admin/global.errors.feature_image.required'),
 			'seo.title.required' => __('admin/seo.errors.title.required'),
+			'seo.title.required_without' => __('admin/seo.errors.title.required'),
 			'seo.description.required' => __('admin/seo.errors.description.required'),
 			'seo.keywords.required' => __('admin/seo.errors.keywords.required'),
 			'seo.keywords.array' => __('admin/seo.errors.keywords.array'),
 			'seo.link.required' => __('admin/seo.errors.link.required'),
+			'seo.link.required_without' => __('admin/seo.errors.link.required'),
 		];
 	}
 }

@@ -29,7 +29,7 @@ class BlogCreateRequest extends FormRequest
 			'description' => 'required',
 			'featureImage' => 'required',
 			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
 			'seo.link' => ['required', new SeoLinkRule(Blog::class)],
 			'tags' => 'bail',

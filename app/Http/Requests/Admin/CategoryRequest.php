@@ -28,10 +28,10 @@ class CategoryRequest extends FormRequest
 			'name' => 'required',
 			'type' => 'required',
 			'priority' => 'required',
-			'seo.title' => 'required',
-			'seo.description' => 'required',
+			'seo.title' => 'required_without:name',
+			'seo.description' => 'bail',
 			'seo.keywords' => 'bail',
-			'seo.link' => ['required', new SeoLinkRule(Category::class)],
+			'seo.link' => ['required_without:name', new SeoLinkRule(Category::class)],
 		];
 	}
 
@@ -42,10 +42,12 @@ class CategoryRequest extends FormRequest
 			'name.required' => __('admin/category.errors.name.required'),
 			'priority.required' => __('admin/global.errors.priority.required'),
 			'seo.title.required' => __('admin/seo.errors.title.required'),
+			'seo.title.required_without' => __('admin/seo.errors.title.required'),
 			'seo.description.required' => __('admin/seo.errors.description.required'),
 			'seo.keywords.required' => __('admin/seo.errors.keywords.required'),
 			'seo.keywords.array' => __('admin/seo.errors.keywords.array'),
 			'seo.link.required' => __('admin/seo.errors.link.required'),
+			'seo.link.required_without' => __('admin/seo.errors.link.required'),
 		];
 	}
 }
