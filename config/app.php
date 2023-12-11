@@ -191,6 +191,7 @@ return [
 		'General' => \App\Helpers\General::class,
 		'Image' => Intervention\Image\Facades\Image::class,
 		'Media' => App\Facades\Media::class,
+		'Aparat' => App\Facades\Aparat::class,
 		'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 	])->toArray(),
 

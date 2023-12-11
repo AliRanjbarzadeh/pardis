@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Facades\Aparat;
 use App\Interfaces\MediaInterface;
 use App\Traits\HasMedia;
 use App\Traits\HasSearch;
@@ -24,6 +25,11 @@ class Testimonial extends Model implements MediaInterface
 	{
 		$carbon = $this->created_at->setTimezone('Asia/Tehran');
 		return Jalalian::fromCarbon($carbon)->format('Y/m/d');
+	}
+
+	public function setUrlAttribute($value): void
+	{
+		$this->attributes['url'] = Aparat::getEmbededLink($value);
 	}
 
 	/*=============Relations==============*/
