@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Support\Facades\Response;
+use Intervention\Image\Exception\NotFoundException;
 
 class Kernel extends HttpKernel
 {
@@ -82,4 +84,15 @@ class Kernel extends HttpKernel
 		'setLocale' => \App\Http\Middleware\SetLocale::class,
 		'global.configs' => \App\Http\Middleware\GlobalConfigs::class,
 	];
+
+	public function handle($request)
+	{
+		try {
+			return parent::handle($request);
+		} catch (NotFoundException $e) {
+			return Response::view('front.contents.pages.404.index', [], 404);
+		} catch (\Exception $e) {
+			throw $e;
+		}
+	}
 }

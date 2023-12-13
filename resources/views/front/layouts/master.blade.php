@@ -25,7 +25,7 @@
 	@endif
 </head>
 <body>
-<div class="flex flex-col justify-between min-h-[100vh]">
+<div class="flex flex-col justify-between min-h-screen">
 	<div>
 		@include('front.layouts.header.navbar')
 		@yield('content')

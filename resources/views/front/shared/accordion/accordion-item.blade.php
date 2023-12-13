@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<div class="accordion-content overflow-hidden h-0 bg-white transition-all duration-300  leading-8">
-		<div class="html-content p-4">
+		<div class="p-4">
 			<p>{{ $faq->answer }}</p>
 		</div>
 	</div>

@@ -17,7 +17,7 @@
 						</div>
 					</div>
 					<div class="accordion-content overflow-hidden h-0 bg-white transition-all duration-300  leading-8">
-						<div class="html-content p-4 pt-0">
+						<div class="tabs-content p-4 pt-0">
 							<div class="tabs">
 								<ul class="flex mt-1">
 									@foreach($communication->routes as $route)
