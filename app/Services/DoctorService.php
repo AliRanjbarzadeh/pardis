@@ -220,7 +220,7 @@ class DoctorService
 			'media',
 			'seo',
 			'specialities',
-		])->latest();
+		])->orderBy('priority')->latest();
 
 		$doctors->regexpSearch($term, ['first_name', 'last_name', 'description']);
 
