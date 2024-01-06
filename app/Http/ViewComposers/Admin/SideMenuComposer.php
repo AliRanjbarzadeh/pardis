@@ -9,6 +9,7 @@ use App\Http\ViewComposers\Admin\Menus\DoctorMenu;
 use App\Http\ViewComposers\Admin\Menus\GalleryMenu;
 use App\Http\ViewComposers\Admin\Menus\InsuranceMenu;
 use App\Http\ViewComposers\Admin\Menus\PagesMenus;
+use App\Http\ViewComposers\Admin\Menus\PopupMenu;
 use App\Http\ViewComposers\Admin\Menus\SeparatorMenu;
 use App\Http\ViewComposers\Admin\Menus\ServiceMenu;
 use App\Http\ViewComposers\Admin\Menus\SettingsMenus;
@@ -68,6 +69,9 @@ class SideMenuComposer
 
 			//Communications
 			CommunicationMenu::getMenu($request),
+
+			//Popups
+			PopupMenu::getMenu($request),
 
 		])->merge(PagesMenus::getMenu($request))
 			->merge(SettingsMenus::getMenu($request));

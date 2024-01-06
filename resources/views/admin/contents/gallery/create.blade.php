@@ -52,7 +52,3 @@
 		</div>
 	</div>
 @endsection
-
-@push('scripts')
-	<script type="text/javascript" src="{{ asset('assets/admin/js/ck-editor/index.js') }}?ver={{ $resourceVersion }}"></script>
-@endpush

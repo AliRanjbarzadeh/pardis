@@ -1,0 +1,13 @@
+.modal {
+	@apply transition-all -translate-y-1 opacity-0 invisible;
+	&.open-modal {
+		@apply visible opacity-100 translate-y-0;
+	}
+}
+
+.overlay {
+	@apply transition-all opacity-0 invisible;
+	&.open-modal {
+		@apply visible opacity-100;
+	}
+}

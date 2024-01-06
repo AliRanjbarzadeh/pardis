@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 
 @section('content')
+	@include('front.shared.modal.modal', ['popup' => $popup])
 	<main>
 		@include('front.contents.home.banners.image-slider', ['sliders' => $sliders])
 

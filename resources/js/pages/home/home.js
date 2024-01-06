@@ -8,3 +8,4 @@ import './blog-latest.js';
 import './testimonial.js'
 import '@sharedJs/tabs.js';
 import '@sharedJs/map.js';
+import '@sharedJs/modal.js';

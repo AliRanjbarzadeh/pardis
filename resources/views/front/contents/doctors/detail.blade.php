@@ -5,17 +5,17 @@
 		<div class="top-banner">
 			<div class="custom-container">
 				<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 ">
-					<div class="pt-20 pb-16">
+					<div class="py-3 lg:pt-20 md:pb-16">
 						<div class="shadow-md rounded-lg bg-white">
 							<section class="px-5 pt-5">
-								<div class="flex items-end mb-4">
-									<div class="rounded-[100%] me-5 overflow-hidden lg:hidden bg-secondary-950 w-28 h-28 flex-[0_0_7rem] hidden sm:block">
+								<div class="flex items-center lg:items-start mb-4">
+									<div class="rounded-[100%] me-5 overflow-hidden lg:hidden bg-secondary-950 w-28 h-28 flex-[0_0_7rem]">
 										<img class="h-full w-full object-contain object-bottom" src="{{ $doctor->feature_image->url }}" alt="{{ $doctor->full_name }}">
 									</div>
 									<div>
 										<h1 class="text-xl font-bold mt-2 mb-2">{{ $doctor->full_name }}</h1>
-										<div class="flex items-center mb-3">
-											<span class="bg-secondary-950 text-white px-3 py-1 me-3 rounded-md">{{ $doctor->specialities->first()->name }}</span>
+										<div class="flex items-center mb-3 flex-wrap">
+											<span class="bg-secondary-950 text-white px-3 py-1 me-3 rounded-md mb-2 sm:mb-0">{{ $doctor->specialities->first()->name }}</span>
 											<div class="flex items-center">
 												<span class="text-gray-350 me-1">@lang('front/doctor.words.medical_number')</span>
 												<span class="text-secondary-950">{{ $doctor->medical_number }}</span>

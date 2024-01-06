@@ -36,8 +36,8 @@
 								</div>
 
 								<button type="submit" class="btn btn-primary mt-3 w-25">
-									<span class="tf-icon bx bx-save"></span>
-									@lang('admin/global.actions.save')
+									<span class="tf-icon bx bx-refresh"></span>
+									@lang('admin/global.actions.update')
 								</button>
 							</div>
 						</div>

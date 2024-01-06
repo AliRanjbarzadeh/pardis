@@ -65,8 +65,14 @@ class Doctor extends Model implements MediaInterface, SeoInterface, InsuranceInt
 
 		return [
 			'title' => $workHours->pluck('title')->all(),
-			'from' => $workHours->pluck('from')->all(),
-			'to' => $workHours->pluck('to')->all(),
+			'first' => [
+				'from' => $workHours->pluck('first.from')->all(),
+				'to' => $workHours->pluck('first.to')->all(),
+			],
+			'second' => [
+				'from' => $workHours->pluck('second.from')->all(),
+				'to' => $workHours->pluck('second.to')->all(),
+			],
 		];
 	}
 

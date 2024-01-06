@@ -118,3 +118,26 @@ function showItem(element) {
 	const showModal = new bootstrap.Modal(showModalElement);
 	showModal.show();
 }
+
+
+function changeStatusItem(element) {
+	let url = element.getAttribute('data-url');
+	let status = element.getAttribute('data-status');
+	if (url === undefined || url === null || url === '' || status === undefined || status === null || status === '') {
+		return;
+	}
+
+	axios.patch(url, {status: status}).then((response) => {
+		if (typeof rowActionDone === 'function') {
+			rowActionDone(true, response.data.message);
+		}
+	}).catch((error) => {
+		if (typeof rowActionDone === 'function') {
+			if (error.response) {
+				rowActionDone(false, error.response.data.message);
+			} else {
+				rowActionDone(false, __('admin/global.errors.reject'));
+			}
+		}
+	});
+}

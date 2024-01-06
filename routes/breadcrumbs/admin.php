@@ -153,6 +153,12 @@ Breadcrumbs::adminComments('blogs', __('admin/comment.plural'));
 Breadcrumbs::admin('admin.galleries', __('admin/gallery.plural'));
 Breadcrumbs::adminCategories('gallery', __('admin/category.plural'));
 
+//Testimonials
+Breadcrumbs::admin('admin.testimonials', __('admin/testimonial.plural'));
+
+//Popups
+Breadcrumbs::admin('admin.popups', __('admin/popup.plural'));
+
 //Home
 Breadcrumbs::adminPage('home', __('admin/page.words.home'), [
 	'slider' => true,

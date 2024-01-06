@@ -73,7 +73,8 @@ class DoctorController extends Controller
 			->setInsurances($request->input('insurances'))
 			->setContacts($request->input('contact'))
 			->setSocialNetworks($request->input('social_networks'))
-			->setResumes($request->input('resumes'));
+			->setResumes($request->input('resumes'))
+			->setWorkHours($request->input('work_hours'));
 
 		if (is_null($this->service->store($dto))) {
 			return back()->withInput()->withErrors(['failed', __('admin/global.errors.store')]);
@@ -102,9 +103,8 @@ class DoctorController extends Controller
 			->setInsurances($request->input('insurances'))
 			->setContacts($request->input('contact'))
 			->setSocialNetworks($request->input('social_networks'))
-			->setResumes($request->input('resumes'));
-
-//		return response()->json($dto);
+			->setResumes($request->input('resumes'))
+			->setWorkHours($request->input('work_hours'));
 
 		$doctor->load(['insurances', 'seo', 'media', 'contacts', 'specialities', 'clinics', 'socialNetworks', 'metas']);
 		if (is_null($this->service->update($doctor, $dto))) {

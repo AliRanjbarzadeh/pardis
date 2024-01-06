@@ -8,4 +8,6 @@ enum StatusEnum: string
 	case Approved = 'approved';
 	case Rejected = 'rejected';
 	case Answered = 'answered';
+	case Active = 'active';
+	case Disable = 'disable';
 }

@@ -7,6 +7,6 @@
 		    {{ $comment->full_name }}
 	    </strong>
     </div>
-	<p class="text-gray-400 mb-3">{{ $comment->body }}</p>
+	<p class="text-gray-400 mb-3 leading-8">{{ $comment->body }}</p>
 	<span class="opacity-60">{{ $comment->created_at_ago }}</span>
 </div>

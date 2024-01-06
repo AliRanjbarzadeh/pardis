@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\Admin\PopupController;
 use App\Http\Controllers\Admin\PriorityController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SliderController;
@@ -168,6 +169,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 			Route::post('datatable', [TestimonialController::class, 'datatable'])->name('datatable');
 		});
 		Route::resource('testimonials/', TestimonialController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
+
+		//Popups
+		Route::prefix('popups')->name('popups.')->group(function () {
+			Route::post('datatable', [PopupController::class, 'datatable'])->name('datatable');
+			Route::patch('{popup}/changeStatus', [PopupController::class, 'changeStatus'])->name('changeStatus');
+		});
+		Route::resource('popups/', PopupController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Home
 		Route::prefix('home')->name('home.')->group(function () {

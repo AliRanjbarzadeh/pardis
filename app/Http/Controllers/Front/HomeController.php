@@ -11,6 +11,7 @@ use App\Services\CommunicationService;
 use App\Services\DoctorService;
 use App\Services\InsuranceService;
 use App\Services\PageService;
+use App\Services\PopupService;
 use App\Services\ServiceService;
 use App\Services\SliderService;
 use App\Services\TestimonialService;
@@ -27,6 +28,7 @@ class HomeController extends Controller
 		protected BlogService          $blogService,
 		protected TestimonialService   $testimonialService,
 		protected CommunicationService $communicationService,
+		protected PopupService         $popupService,
 	)
 	{
 	}
@@ -84,7 +86,10 @@ class HomeController extends Controller
 		//Communications
 		$communications = $this->communicationService->all();
 
-		return view('front.contents.home.index', compact('page', 'sliders', 'clinics', 'doctors', 'services', 'testimonials', 'insurances', 'blogs', 'communications'));
+		//Popup
+		$popup = $this->popupService->find();
+
+		return view('front.contents.home.index', compact('page', 'sliders', 'clinics', 'doctors', 'services', 'testimonials', 'insurances', 'blogs', 'communications', 'popup'));
 	}
 
 	/*==================Create====================*/

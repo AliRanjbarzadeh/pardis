@@ -84,6 +84,9 @@
 						<!--Contact Information-->
 						@include('admin.templates.contact', ['className' => 'mt-3'])
 
+						<!--Work Hour-->
+						@include('admin.templates.work-hour-inputs', ['className' => 'mt-3'])
+
 						<!--SocialNetwork Information-->
 						@include('admin.templates.social-network', ['className' => 'mt-3'])
 

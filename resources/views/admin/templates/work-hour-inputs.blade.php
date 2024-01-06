@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center {{ $className ?? '' }}">
 	<h5 class="m-0 flex-grow-1">@lang('admin/work_hour.plural')</h5>
 	<button type="button" class="btn btn-icon btn-primary rounded-pill" data-action="add-work-hour">
 		<span class="tf-icons bx bx-plus"></span>

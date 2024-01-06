@@ -48,8 +48,8 @@
 								@include('admin.templates.insurance-input', ['className' => 'mb-3', 'insurances' => $insurances, 'selected' => $doctor->insurances->pluck('id')->all()])
 
 								<button type="submit" class="btn btn-primary mt-3 w-25">
-									<span class="tf-icon bx bx-save"></span>
-									@lang('admin/global.actions.save')
+									<span class="tf-icon bx bx-refresh"></span>
+									@lang('admin/global.actions.update')
 								</button>
 							</div>
 						</div>
@@ -82,9 +82,11 @@
 							</div>
 						</div>
 
-
 						<!--Contact Information-->
 						@include('admin.templates.contact', ['className' => 'mt-3', 'contacts' => $doctor->contacts_for_input])
+
+						<!--Work Hour-->
+						@include('admin.templates.work-hour-inputs', ['className' => 'mt-3', 'workHours' => $doctor->work_hours_for_input])
 
 						<!--SocialNetwork Information-->
 						@include('admin.templates.social-network', ['className' => 'mt-3', 'socialNetworks' => $doctor->social_networks_for_input])

@@ -9,6 +9,8 @@ return [
 		'pending' => 'در حال بررسی',
 		'approved' => 'تایید شده',
 		'rejected' => 'رد شده',
+		'active' => 'فعال',
+		'disable' => 'غیرفعال',
 	],
 
 	//Placeholders
@@ -25,7 +27,10 @@ return [
 	],
 
 	//Actions
-	'actions' => [],
+	'actions' => [
+		'activate' => 'فعال کردن',
+		'disable' => 'غیرفعال کردن',
+	],
 
 	//Sentences
 	'sentences' => [],
