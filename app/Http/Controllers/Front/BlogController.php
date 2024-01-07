@@ -96,6 +96,13 @@ class BlogController extends Controller
 		return view('front.contents.blogs.index', compact('page', 'blogs', 'topItems', 'categories'));
 	}
 
+	public function cancer(Request $request)
+	{
+		$seoLink = $request->segment(1);
+
+		return $this->show($seoLink);
+	}
+
 	/*==================Create====================*/
 
 	/*==================Edit====================*/

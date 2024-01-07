@@ -920,7 +920,7 @@
 			</li>
 		</ul>
 		<div class="menuLogo">
-			<amp-img width="80px" height="80px" src="{{ asset('assets/front/images/amp/logo-verical.png') }}" alt="کلینک تخصصی سرطان پردیس"></amp-img>
+			<amp-img width="80px" height="80px" src="{{ asset('assets/front/images/logo.png') }}" alt="کلینک تخصصی سرطان پردیس"></amp-img>
 		</div>
 	</nav>
 </amp-sidebar>
@@ -930,7 +930,7 @@
 	</button>
 	<div class="main">
 		<div class="site-logo text-center">
-			<amp-img width="160px" height="60px" src="{{ asset('assets/front/images/amp/logo-verical.png') }}"></amp-img>
+			<amp-img width="160px" height="60px" src="{{ asset('assets/front/images/logo.png') }}"></amp-img>
 			<p>
 				<span> کلینک تخصصی سرطان پردیس </span>
 			</p>

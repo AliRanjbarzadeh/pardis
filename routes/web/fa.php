@@ -42,6 +42,7 @@ Route::prefix('services')->name('services.')->group(function () {
 });
 
 //blogs
+Route::get('سرطان', [BlogController::class, 'cancer']);
 Route::prefix('blog')->name('blogs.')->group(function () {
 	Route::get('', [BlogController::class, 'index'])->name('index');
 	Route::get('{seoLink}', [BlogController::class, 'show'])->name('show');
