@@ -16,6 +16,10 @@
 <meta name="format-detection" content="telephone=no"/>
 <meta name="url" content="{{ request()->fullUrl() }}">
 
+@if(isset($ampUrl))
+	<link rel="amphtml" href="{{ $ampUrl }}">
+@endif
+
 @if(isset($seo))
 	<!-- ############# SEO ############ -->
 	<meta property="og:url" content="{{ url()->current() }}"/>

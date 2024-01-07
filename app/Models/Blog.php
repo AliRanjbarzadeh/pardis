@@ -66,6 +66,11 @@ class Blog extends Model implements MediaInterface, CommentsInterface, SeoInterf
 		return intval($this->rates->average('rate_value'));
 	}
 
+	public function getAmpUrlAttribute(): string
+	{
+		return route('amp.index', $this->seo->link);
+	}
+
 	/*=============Relations==============*/
 	public function doctors(): BelongsToMany
 	{

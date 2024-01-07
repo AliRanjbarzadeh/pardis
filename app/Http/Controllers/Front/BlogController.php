@@ -58,6 +58,7 @@ class BlogController extends Controller
 		//set seo items
 		$this->setSeo($blog->seo);
 		$this->setPageTitle($blog->seo->title);
+		$this->setAmpUrl($blog->amp_url);
 
 		$page = $this->pageService->find(PageTypeEnum::Blogs, ['metas']);
 

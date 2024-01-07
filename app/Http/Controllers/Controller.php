@@ -30,8 +30,13 @@ class Controller extends BaseController
 		$this->model = $model;
 	}
 
-	public function setPageTitle(string $pageTitle)
+	public function setPageTitle(string $pageTitle): void
 	{
 		View::share('pageTitle', $pageTitle);
+	}
+
+	public function setAmpUrl(string $url): void
+	{
+		View::share('ampUrl', $url);
 	}
 }
