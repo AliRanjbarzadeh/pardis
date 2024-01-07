@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\Facade;
  * @method static void remove(array|int $ids)
  * @method static string url(string $path)
  * @method static void setSizes(array $sizes)
+ * @method static array dimension(string $path)
  *
  * @see \App\Helpers\MediumHelper::upload()
  * @see \App\Helpers\MediumHelper::remove()
  * @see \App\Helpers\MediumHelper::setSizes()
+ * @see \App\Helpers\MediumHelper::dimension()
  */
 class Media extends Facade
 {

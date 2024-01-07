@@ -47,10 +47,13 @@
 
 	@if(!$seo->robots)
 		<meta name="robots" content="noindex,nofollow">
+	@else
+		<meta name="robots" content="follow, index"/>
 	@endif
 
 @else
 	<link rel="canonical" href="{{ request()->fullUrl() }}">
+	<meta name="robots" content="follow, index"/>
 @endif
 
 @if(!request()->routeIs('index'))

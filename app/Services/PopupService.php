@@ -5,6 +5,7 @@ namespace App\Services;
 use App\DataTransferObjects\DatatablesFilterDto;
 use App\DataTransferObjects\PopupDto;
 use App\Enums\PopupTypeEnum;
+use App\Enums\StatusEnum;
 use App\Models\Popup;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
@@ -94,6 +95,7 @@ class PopupService
 	public function find(): ?Popup
 	{
 		return Popup::with('media')
+			->where('status', '=', StatusEnum::Active)
 			->orderBy('id', 'desc')
 			->first();
 	}

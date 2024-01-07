@@ -71,4 +71,9 @@ class Comment extends Model
 	}
 
 	/*=============Additional functions==============*/
+	public function getCreatedAtFormatted(string $format): string
+	{
+		$carbon = $this->created_at->setTimezone('Asia/Tehran');
+		return Jalalian::fromCarbon($carbon)->format($format);
+	}
 }

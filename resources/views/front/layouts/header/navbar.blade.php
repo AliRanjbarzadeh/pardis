@@ -23,7 +23,7 @@
 					</a>
 				@endforeach
 
-				@include('front.layouts.header.language-switch')
+{{--				@include('front.layouts.header.language-switch')--}}
 			</div>
 		</div>
 	</div>

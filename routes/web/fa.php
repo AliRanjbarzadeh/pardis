@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\AmpController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ClinicController;
 use App\Http\Controllers\Front\CommonController;
@@ -8,6 +9,11 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\InsuranceController;
 use App\Http\Controllers\Front\ServiceController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('test', function () {
+//	\Illuminate\Support\Facades\Artisan::call('view:clear');
+//	\Illuminate\Support\Facades\Artisan::call('config:clear');
+});
 
 //admin routes
 Route::scopeBindings()->group(base_path('routes/web/admin.php'));
@@ -52,4 +58,10 @@ Route::get('درباره-ما', [CommonController::class, 'about'])->name('about
 Route::prefix('تماس-با-ما')->name('contact.')->group(function () {
 	Route::get('', [CommonController::class, 'contact'])->name('index');
 	Route::post('', [CommonController::class, 'contact_store'])->name('store');
+});
+
+Route::prefix('amp')->name('amp.')->group(function () {
+	Route::get('{seoLink}', [AmpController::class, 'index'])->name('index');
+	Route::post('{blog}/rate', [AmpController::class, 'rate'])->name('rate');
+	Route::post('{blog}/comment', [AmpController::class, 'comment'])->name('comment');
 });

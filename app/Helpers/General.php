@@ -114,4 +114,18 @@ class General
 		file_put_contents($file, $contents);
 		return new UploadedFile(path: $file, originalName: $info['basename'], test: true);
 	}
+
+	public static function get_gravatar($email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array())
+	{
+		$url = 'https://www.gravatar.com/avatar/';
+		$url .= md5(strtolower(trim($email)));
+		$url .= "?s=$s&d=$d&r=$r";
+		if ($img) {
+			$url = '<img src="' . $url . '"';
+			foreach ($atts as $key => $val)
+				$url .= ' ' . $key . '="' . $val . '"';
+			$url .= ' />';
+		}
+		return $url;
+	}
 }

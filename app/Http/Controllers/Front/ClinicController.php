@@ -40,6 +40,7 @@ class ClinicController extends Controller
 
 		//set for breadcrumb
 		$this->setModel($clinic);
+		$this->setPageTitle($clinic->seo->title);
 
 		//set seo items
 		$this->setSeo($clinic->seo);

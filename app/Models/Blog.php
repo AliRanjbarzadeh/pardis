@@ -16,7 +16,6 @@ use App\Traits\HasSeo;
 use App\Traits\HasTag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Morilog\Jalali\Jalalian;
@@ -43,6 +42,30 @@ class Blog extends Model implements MediaInterface, CommentsInterface, SeoInterf
 		return Jalalian::fromCarbon($carbon)->ago();
 	}
 
+	public function getAmpifyDescriptionAttribute(): string
+	{
+		$html = str_ireplace(
+			['<img', '<video', '/video>', '<audio', '/audio>', '<iframe', '/iframe>', 'autostart="false"', 'autostart="true"', ' onclick="this.paused?this.play():this.pause()"'],
+			['<amp-img  layout="responsive" ', '<amp-video', '/amp-video>', '<amp-audio', '/amp-audio>', '<amp-iframe layout="responsive"  sandbox="allow-scripts allow-same-origin allow-popups"  allowfullscreen  frameborder="0"', '/amp-iframe>', '', '', ''],
+			$this->description
+		);
+		# Add closing tags to amp-img custom element
+		//$html = preg_replace('/<amp-img(.*?)>/', '<amp-img$1></amp-img>',$html);
+
+		# Whitelist of HTML tags allowed by AMP
+		$html = strip_tags($html, '<iframe><amp-iframe><h1><h2><h3><h4><h5><h6><a><p><ul><ol><li><blockquote><q><cite><ins><del><strong><em><code><pre><svg><table><thead><tbody><tfoot><th><tr><td><dl><dt><dd><article><section><header><footer><aside><figure><time><abbr><div><span><hr><small><br><amp-img><amp-audio><amp-video><amp-ad><amp-anim><amp-carousel><amp-fit-rext><amp-image-lightbox><amp-instagram><amp-lightbox><amp-twitter><amp-youtube>');
+
+		$html = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $html);
+		//$html = str_replace('</amp-img></amp-img>', '</amp-img>',$html);
+
+		return $html;
+	}
+
+	public function getRateAverageAttribute(): int
+	{
+		return intval($this->rates->average('rate_value'));
+	}
+
 	/*=============Relations==============*/
 	public function doctors(): BelongsToMany
 	{
@@ -60,6 +83,11 @@ class Blog extends Model implements MediaInterface, CommentsInterface, SeoInterf
 	}
 
 	/*=============Additional functions==============*/
+	public function getCreatedAtFormatted(string $format): string
+	{
+		$carbon = $this->created_at->setTimezone('Asia/Tehran');
+		return Jalalian::fromCarbon($carbon)->format($format);
+	}
 
 	/*=============Vendor functions==============*/
 	public function getSizes(): array

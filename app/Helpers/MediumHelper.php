@@ -144,6 +144,16 @@ class MediumHelper
 		return url(Storage::disk($this->getMediaDisk())->url($path));
 	}
 
+	public function dimension(string $path): ?array
+	{
+		try {
+			list($width, $height) = getimagesize(Storage::disk($this->getMediaDisk())->path($path));
+			return [$width, $height];
+		} catch (\Exception $e) {
+			return null;
+		}
+	}
+
 	protected function getPath(string $path = ''): string
 	{
 		return $this->prepareUploadPath($path) . '/';

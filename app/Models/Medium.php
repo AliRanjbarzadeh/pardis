@@ -68,6 +68,11 @@ class Medium extends Model
 		return $this->url;
 	}
 
+	public function getDimensionAttribute(): ?array
+	{
+		return Media::dimension($this->path);
+	}
+
 	/*=============Relations==============*/
 	public function mediumable(): MorphTo
 	{

@@ -16,11 +16,11 @@ class AdminFactory extends Factory
 	{
 		return [
 			'type' => 'admin',
-			'name' => 'Ali Ranjbarzadeh',
-			'username' => 'aliranjbarzadeh',
-			'email' => 'ranjbarzadehali@gmail.com',
+			'name' => 'Amin Takmili',
+			'username' => 'amintakmili',
+			'email' => 'amin.takmili@gmail.com',
 			'email_verified_at' => now(),
-			'password' => Hash::make("@Ali123987"),
+			'password' => Hash::make("amin222@@@"),
 			'status' => true,
 			'is_super_admin' => true,
 		];

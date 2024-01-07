@@ -57,6 +57,7 @@ class BlogController extends Controller
 
 		//set seo items
 		$this->setSeo($blog->seo);
+		$this->setPageTitle($blog->seo->title);
 
 		$page = $this->pageService->find(PageTypeEnum::Blogs, ['metas']);
 
@@ -78,6 +79,7 @@ class BlogController extends Controller
 
 		//set seo items
 		$this->setSeo($category->seo);
+		$this->setPageTitle($category->seo->title);
 
 		$page = $this->pageService->find(PageTypeEnum::Blogs, ['metas']);
 
