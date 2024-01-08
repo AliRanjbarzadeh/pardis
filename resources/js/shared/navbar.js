@@ -12,8 +12,8 @@ $(document).ready(function () {
 
 	const toggleMenuIcon = () => {
 		const menuButton = $('#mobile-menu-button');
-		menuButton.find('.menu-ii').toggleClass('hidden');
-		menuButton.find('.close-ii').toggleClass('hidden');
+		menuButton.find('.menu-ii').toggleClass('!hidden');
+		menuButton.find('.close-ii').toggleClass('!hidden');
 	}
 	$('#mobile-menu-button').click(function () {
 		toggleMenuIcon();

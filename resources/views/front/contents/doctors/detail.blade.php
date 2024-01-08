@@ -4,9 +4,9 @@
 	<main class="pb-14">
 		<div class="top-banner">
 			<div class="custom-container">
-				<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 ">
+				<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 items-end">
 					<div class="py-3 lg:pt-20 md:pb-16">
-						<div class="shadow-md rounded-lg bg-white">
+						<div class="shadow-md rounded-[20px] bg-white">
 							<section class="px-5 pt-5">
 								<div class="flex items-center lg:items-start mb-4">
 									<div class="rounded-[100%] me-5 overflow-hidden lg:hidden bg-secondary-950 w-28 h-28 flex-[0_0_7rem]">
@@ -24,32 +24,62 @@
 									</div>
 								</div>
 								<p class="text-justify leading-7">{{ $doctor->description }}</p>
+								@if(!empty($doctor->work_hours))
+									<div class="pt-4">
+										<p class="font-bold text-primary-950 text-base mb-2">@lang('front/doctor.words.work_hours')</p>
+										<ul>
+											@foreach($doctor->work_hours as $workHour)
+												<li class="last:mb-0 mb-3">
+													<div class="flex justify-between items-center">
+														<span class="font-bold">{{ $workHour['title'] }}</span>
+														<div class="flex items-center">
+															@if(isset($workHour['first']))
+																<span class="text-primary-950">@lang('front/work_hour.sentences.shift_text', ['from' => $workHour['first']['from'], 'to' => $workHour['first']['to']])</span>
+															@endif
+
+															@if(isset($workHour['second']))
+																<span class="h-[2px] w-[8px] bg-gray-100 mx-1 block"></span>
+																<span class="text-primary-950">@lang('front/work_hour.sentences.shift_text', ['from' => $workHour['second']['from'], 'to' => $workHour['second']['to']])</span>
+															@endif
+														</div>
+													</div>
+												</li>
+											@endforeach
+										</ul>
+									</div>
+								@endif
 							</section>
-							<hr class="border-gray-200 w-full mt-3">
-							<div class="flex items-center justify-between px-5 py-4">
-								<span class="font-bold text-primary-950">@lang('front/social_network.plural')</span>
-								<div class="flex items-center gap-2">
-									@foreach($doctor->socialNetworks as $socialNetwork)
-										<a class="w-9 h-9 hover:text-secondary-950" href="{{ $socialNetwork->address_url }}">
-											<img src="{{ asset("assets/front/icons/{$socialNetwork->socialNetworkType->icon}.svg") }}" alt="">
-										</a>
-									@endforeach
+							@if($doctor->socialNetworks->isNotEmpty())
+								<hr class="border-gray-200 w-full mt-3">
+								<div class="flex items-center justify-between px-5 py-4">
+									<span class="font-bold text-primary-950">@lang('front/social_network.plural')</span>
+									<div class="flex items-center gap-2">
+										@foreach($doctor->socialNetworks as $socialNetwork)
+											<a class="w-9 h-9 hover:text-secondary-950" href="{{ $socialNetwork->address_url }}">
+												<img src="{{ asset("assets/front/icons/{$socialNetwork->socialNetworkType->icon}.svg") }}" alt="">
+											</a>
+										@endforeach
+									</div>
 								</div>
-							</div>
-							<hr class="border-gray-200 w-full">
-							<div class="flex items-center justify-between px-5 py-4">
-								<span class="font-bold text-primary-950">@lang('front/contact_info.words.phone')</span>
-								<div class="text-base font-bold">
-									@foreach($doctor->contacts as $contact)
-										<a href="{{ $contact->link }}" class="hover:text-secondary-950">
-											{{ $contact->contact_value }}
-										</a>
-										@if(!$loop->last)
-											&nbsp;@lang('front/global.words.and')&nbsp;
-										@endif
-									@endforeach
+							@endif
+
+							@if($doctor->contacts->isNotEmpty())
+								<hr class="border-gray-200 w-full">
+								<div class="flex items-center justify-between px-5 py-4">
+									<span class="font-bold text-primary-950">@lang('front/contact_info.words.phone')</span>
+									<div class="text-base font-bold">
+										@foreach($doctor->contacts as $contact)
+											<a href="{{ $contact->link }}" class="hover:text-secondary-950">
+												{{ $contact->contact_value }}
+											</a>
+											@if(!$loop->last)
+												&nbsp;@lang('front/global.words.and')&nbsp;
+											@endif
+										@endforeach
+									</div>
 								</div>
-							</div>
+							@endif
+
 							<div class="p-5">
 								<a class="btn btn-primary py-3 w-full text-base font-bold shadow-btn1" href="{{ $doctor->reservation_link }}">
 									@lang('front/doctor.sentences.reserve', ['name' => $doctor->full_name])
@@ -57,7 +87,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="h-full w-fit hidden lg:block">
+					<div class="h-full w-fit hidden lg:block max-h-[70vh] pt-8">
 						<img class="h-full w-full object-contain object-bottom" src="{{ $doctor->feature_image->url }}" alt>
 					</div>
 				</div>

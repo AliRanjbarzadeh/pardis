@@ -21,7 +21,7 @@
 						<span id="filters-result">{{ request('speciality')?->name ?? __('front/global.words.filter.all') }}</span>
 						<span class="material-symbols-outlined ms-1">arrow_drop_down</span>
 					</div>
-					<div class="shadow-md bg-white rounded-md absolute left-0 top-full w-[50%] invisible opacity-0 -translate-y-2  transition-all" id="filters-popover">
+					<div class="shadow-md bg-white rounded-md absolute left-0 top-full w-[50%] invisible opacity-0 -translate-y-2  transition-all z-[9999999]" id="filters-popover">
 						<form>
 							<ul>
 								<li class="last:border-b-0 border-b border-gray-50 py-3 px-4 text-gray-400">

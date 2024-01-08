@@ -35,8 +35,8 @@
 		<nav class="flex flex-row items-center justify-between px-1">
 			<div class="flex items-center">
 				<button class="px-4 flex" id="mobile-menu-button">
-					<span class="text-3xl material-symbols-outlined menu-ii">menu</span>
-					<span class="text-3xl material-symbols-outlined hidden close-ii">arrow_forward</span>
+					<span class="!text-3xl material-symbols-outlined menu-ii">menu</span>
+					<span class="!text-3xl material-symbols-outlined !hidden close-ii">arrow_forward</span>
 				</button>
 				<a href="">
 					<img class="h-[35px]" src="{{ asset('assets/front/images/mobile-logo.png') }}">

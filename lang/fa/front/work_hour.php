@@ -23,6 +23,7 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'shift' => '<span class="lg:hidden xl:inline">از ساعت</span> :from الی :to'
+		'shift' => '<span class="lg:hidden xl:inline">از ساعت</span> :from الی :to',
+		'shift_text' => 'از ساعت :from الی :to',
 	],
 ];

@@ -1,68 +1,93 @@
 //iran sans
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 100;
-    src: url('@assets/fonts/iransans/IRANSansWeb_UltraLight.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 100;
+	src: url('@assets/fonts/iransans/IRANSansWeb_UltraLight.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 200;
-    src: url('@assets/fonts/iransans/IRANSansWeb_Light.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 200;
+	src: url('@assets/fonts/iransans/IRANSansWeb_Light.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 300;
-    src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 300;
+	src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 400;
-    src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 400;
+	src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-    src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	font-display: swap;
+	src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('@assets/fonts/iransans/IRANSansWeb.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('@assets/fonts/iransans/IRANSansWeb_Medium.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('@assets/fonts/iransans/IRANSansWeb_Medium.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('@assets/fonts/iransans/IRANSansWeb_Bold.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('@assets/fonts/iransans/IRANSansWeb_Bold.otf') format("opentype");
 }
 
 @font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url('@assets/fonts/iransans/IRANSansWeb_Black.otf') format("opentype");
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url('@assets/fonts/iransans/IRANSansWeb_Black.otf') format("opentype");
+}
+
+// Material Symbols 
+
+@font-face {
+	font-family: 'Material Symbols Outlined';
+	font-style: normal;
+	font-weight: 100 700;
+	src: url('@assets/fonts/material/material-icons.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+	font-family: 'Material Symbols Outlined';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }

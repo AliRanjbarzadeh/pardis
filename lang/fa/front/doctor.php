@@ -28,6 +28,7 @@ return [
 		'insurances' => 'بیمه ها',
 		'blogs' => 'مطالب',
 		'comments' => 'نظرات',
+		'work_hours' => 'ساعت حضور پزشک',
 	],
 
 	//Actions
