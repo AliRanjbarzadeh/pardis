@@ -1,5 +1,5 @@
 <div>
-	@include('front.layouts.footer.footer-title', ['title' => 'لینک های مرتبط'])
+	@include('front.layouts.footer.footer-title', ['title' => __('front/global.words.footer.related_links')])
 	@php
 		$links = getSetting('footer_links', []);
 	@endphp

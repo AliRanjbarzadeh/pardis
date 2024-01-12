@@ -55,6 +55,9 @@ class MigrateLocalesCommand extends Command
 	{
 		$locales = config('app.available_locales');
 		foreach ($locales as $locale) {
+			if ($locale == 'fa') {
+				continue;
+			}
 			$this->components->info("Running migration for $locale");
 			$options = ['--force' => true, '--database' => "mysql_$locale"];
 			if ($locale == 'fa') {

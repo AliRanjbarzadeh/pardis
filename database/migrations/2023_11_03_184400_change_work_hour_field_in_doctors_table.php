@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
 	/**
@@ -10,9 +8,7 @@ return new class extends Migration {
 	 */
 	public function up(): void
 	{
-		Schema::table('doctors', function (Blueprint $table) {
-			$table->renameColumn('work_hour', 'work_hours');
-		});
+		\Illuminate\Support\Facades\DB::statement("ALTER TABLE `doctors` CHANGE `work_hour` `work_hours` JSON NULL DEFAULT NULL;");
 	}
 
 	/**
@@ -20,8 +16,6 @@ return new class extends Migration {
 	 */
 	public function down(): void
 	{
-		Schema::table('doctors', function (Blueprint $table) {
-			$table->renameColumn('work_hours', 'work_hour');
-		});
+		\Illuminate\Support\Facades\DB::statement("ALTER TABLE `doctors` CHANGE `work_hours` `work_hour` JSON NULL DEFAULT NULL;");
 	}
 };
