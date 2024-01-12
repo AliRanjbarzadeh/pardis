@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'ساعت کاری',
-	'plural' => 'ساعات کاری',
+	'singular' => 'ساعات العمل',
+	'plural' => 'ساعات العمل',
 
 	//Fields
 	'fields' => [],
@@ -15,7 +15,7 @@ return [
 
 	//Words
 	'words' => [
-		'clinic' => 'ساعات کاری کلینیک',
+		'clinic' => 'مواعيد عمل العيادة',
 	],
 
 	//Actions
@@ -23,7 +23,7 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'shift' => '<span class="lg:hidden xl:inline">از ساعت</span> :from الی :to',
-		'shift_text' => 'از ساعت :from الی :to',
+		'shift' => '<span class="lg:hidden xl:inline">من الساعة</span> :from حتى ال :to',
+		'shift_text' => 'من الساعة :from حتى ال :to',
 	],
 ];

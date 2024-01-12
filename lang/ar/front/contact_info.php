@@ -1,47 +1,47 @@
 <?php
 
 return [
-	'singular' => 'اطلاعات تماس',
-	'plural' => 'اطلاعات تماس',
+	'singular' => 'جهات الاتصال',
+	'plural' => 'جهات الاتصال',
 
 	//Fields
 	'fields' => [
-		'name' => 'نام',
-		'content' => 'متن پیام',
-		'email' => 'پست الکترونیک',
-		'subject' => 'موضوع',
+		'name' => 'اسم',
+		'content' => 'رسالة نصية',
+		'email' => 'بريد إلكتروني',
+		'subject' => 'مشكلة',
 	],
 
 	//Placeholders
 	'placeholders' => [
-		'name' => 'نام',
-		'content' => 'متن پیام',
-		'email' => 'پست الکترونیک',
-		'subject' => 'موضوع',
+		'name' => 'اسم',
+		'content' => 'رسالة نصية',
+		'email' => 'بريد إلكتروني',
+		'subject' => 'مشكلة',
 	],
 
 	//Errors
 	'errors' => [
 		'name' => [
-			'required' => 'لطفا نام را وارد کنید',
+			'required' => 'الرجاء إدخال الاسم',
 		],
 		'content' => [
-			'required' => 'لطفا متن پیام را وارد کنید',
+			'required' => 'الرجاء إدخال نص الرسالة',
 		],
 		'email' => [
-			'required' => 'لطفا پست الکترونیک را وارد کنید',
+			'required' => 'الرجاء إدخال عنوان البريد الإلكتروني الخاص بك',
 		],
 		'subject' => [
-			'required' => 'لطفا موضوع را وارد کنید',
+			'required' => 'الرجاء إدخال الموضوع',
 		],
 	],
 
 	//Words
 	'words' => [
-		'phone' => 'شماره تماس',
-		'contact' => 'تماس با کلینیک پردیس',
-		'communication' => 'راه های ارتباطی',
-		'contact_form' => 'فرم تماس با ما',
+		'phone' => 'رقم التليفون',
+		'contact' => 'اتصل بعيادة پردیس',
+		'communication' => 'طرق التواصل',
+		'contact_form' => 'اتصل بنا النموذج',
 	],
 
 	//Actions

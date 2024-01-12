@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'مطلب',
-	'plural' => 'مطالب',
+	'singular' => 'محتوى',
+	'plural' => 'محتويات',
 
 	//Fields
 	'fields' => [],
@@ -16,15 +16,15 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'مجله پردیس',
+			'title' => 'مجلة پردیس',
 		],
-		'top_items' => 'برترین مقالات',
-		'search' => 'جستجو در مقالات',
+		'top_items' => 'أهم المقالات',
+		'search' => 'بحث في المقالات',
 		'related' => [
-			'doctor' => 'پزشک مرتبط',
-			'clinic' => 'کلینیک مرتبط',
+			'doctor' => 'الطبيب المرتبط',
+			'clinic' => 'عيادة ذات صلة',
 		],
-		'comments_count' => '(:count نظر)',
+		'comments_count' => '(:count رأي)',
 	],
 
 	//Actions

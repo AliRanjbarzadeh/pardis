@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'بیمه',
-	'plural' => 'بیمه ها',
+	'singular' => 'تأمين',
+	'plural' => 'التأمينات',
 
 	//Fields
 	'fields' => [],
@@ -16,7 +16,7 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'بیمه ها',
+			'title' => 'التأمينات',
 		],
 	],
 
@@ -25,6 +25,6 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'choose' => 'نام بیمه مورد نظر خود را انتخاب کنید :'
+		'choose' => 'اختر اسم التأمين الذي تريده :'
 	],
 ];

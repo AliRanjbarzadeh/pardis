@@ -49,7 +49,7 @@
 		<link rel="canonical" href="{{ request()->fullUrl() }}">
 	@endif
 
-	@if(!$seo->robots)
+	@if(!$seo->robots || config('app.locale') != 'fa')
 		<meta name="robots" content="noindex,nofollow">
 	@else
 		<meta name="robots" content="follow, index"/>

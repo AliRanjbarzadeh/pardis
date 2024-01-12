@@ -16,7 +16,7 @@ return [
 	//Words
 	'words' => [
 		'app' => [
-			'name' => 'کلینیک پردیس',
+			'name' => 'عيادة پردیس',
 		],
 		'language' => [
 			'fa' => 'فارسی',
@@ -26,38 +26,38 @@ return [
 		],
 		'about_us' => [
 			'menu' => [
-				'title' => 'درباره ما',
+				'title' => 'معلومات عنا',
 			],
 		],
 		'contact_us' => [
 			'menu' => [
-				'title' => 'تماس با ما',
+				'title' => 'اتصل بنا',
 			],
 		],
 		'reservation' => [
 			'menu' => [
-				'title' => 'نوبت دهی آنلاین',
+				'title' => 'حجز عبر الإنترنت',
 			],
 		],
 		'view' => [
-			'all' => 'مشاهده همه',
-			'more' => 'مشاهده بیشتر',
+			'all' => 'عرض الكل',
+			'more' => 'عرض المزيد',
 		],
 		'filter' => [
-			'all' => 'نمایش همه',
+			'all' => 'عرض الكل',
 		],
-		'more_info' => 'اطلاعات بیشتر',
-		'read_more' => 'بیشتر بخوانید',
-		'all' => 'همه',
+		'more_info' => 'معلومات اكثر',
+		'read_more' => 'اقرأ أكثر',
+		'all' => 'الجميع',
 		'and' => 'و',
-		'has' => 'دارد',
-		'has_not' => 'ندارد',
+		'has' => 'حصل عليها',
+		'has_not' => 'لا يمتلك',
 		'footer' => [
-			'related_links' => 'لینک های مرتبط',
-			'follow_us' => 'ما را در شبکه های اجتماعی دنبال کنید',
-			'contact_info' => 'اطلاعات تماس',
-			'address' => 'آدرس :',
-			'phone_number' => 'شماره تماس :',
+			'related_links' => 'روابط ذات علاقة',
+			'follow_us' => 'تابعونا على الشبكات الاجتماعية',
+			'contact_info' => 'جهات الاتصال',
+			'address' => 'عنوان :',
+			'phone_number' => 'رقم التليفون :',
 		],
 	],
 
@@ -66,7 +66,7 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'copy_right' => 'تمام حقوق مادی و معنوی برای <span class="text-secondary-950">کلینیک پردیس</span> محفوظ است',
-		'developer' => 'طراحی, پیاده سازی و سئو توسط <a class="text-secondary-950" href="http://afrandev.com/" target="_blank" rel="noopener noreferrer">افران</a>',
+		'copy_right' => 'جميع الحقوق الفكرية والمادية محفوظة <span class="text-secondary-950">لعيادة پردیس</span>',
+		'developer' => 'التصميم والتنفيذ وتحسين محركات البحث بواسطة <a class="text-secondary-950" href="http://afrandev.com/" target="_blank" rel="noopener noreferrer">افران</a>',
 	],
 ];

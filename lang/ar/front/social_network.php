@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'شبکه اجتماعی',
-    'plural' => 'شبکه های اجتماعی',
+    'singular' => 'شبكة اجتماعية',
+    'plural' => 'الشبكات الاجتماعية',
 
     //Fields
     'fields' => [],

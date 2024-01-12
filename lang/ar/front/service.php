@@ -1,7 +1,7 @@
 <?php
 
 return [
-	'singular' => 'خدمت',
+	'singular' => 'خدمة',
 	'plural' => 'خدمات',
 
 	//Fields
@@ -16,9 +16,9 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'خدمات ما',
+			'title' => 'خدماتنا',
 		],
-		'ours' => 'خدمات ما',
+		'ours' => 'خدماتنا',
 	],
 
 	//Actions

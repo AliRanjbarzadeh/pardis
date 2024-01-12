@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'پزشک',
-	'plural' => 'پزشکان',
+	'singular' => 'طبيب',
+	'plural' => 'الأطباء',
 
 	//Fields
 	'fields' => [],
@@ -16,19 +16,19 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'پزشکان',
+			'title' => 'الأطباء',
 		],
-		'search' => 'جستجو در پزشکان',
-		'filter' => 'فیلتر پزشکان',
-		'medical_number' => 'شماره نظام پزشکی :',
-		'biography' => 'بیوگرافی',
-		'resumes' => 'مدارک و تحصیلات',
-		'clinics' => 'کلینیک ها',
-		'galleries' => 'گالری تصاویر',
-		'insurances' => 'بیمه ها',
-		'blogs' => 'مطالب',
-		'comments' => 'نظرات',
-		'work_hours' => 'ساعت حضور پزشک',
+		'search' => 'بحث الأطباء',
+		'filter' => 'تصفية الأطباء',
+		'medical_number' => 'رقم النظام الطبي :',
+		'biography' => 'سيرة شخصية',
+		'resumes' => 'المؤهلات والتعليم',
+		'clinics' => 'عيادات',
+		'galleries' => 'معرض الصور',
+		'insurances' => 'التأمينات',
+		'blogs' => 'محتويات',
+		'comments' => 'تعليقات',
+		'work_hours' => 'موعد موعد الطبيب',
 	],
 
 	//Actions
@@ -36,8 +36,8 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'reserve' => 'رزرو نوبت با :name',
-		'biography' => 'بیوگرافی و رزومه :name',
-		'resumes' => 'مدارک و رزومه :name',
+		'reserve' => 'حجز موعد مع :name',
+		'biography' => 'السيرة الذاتية والسيرة الذاتية :name',
+		'resumes' => 'المستندات والسيرة الذاتية :name',
 	],
 ];
