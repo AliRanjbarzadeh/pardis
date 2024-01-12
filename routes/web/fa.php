@@ -16,7 +16,7 @@ Route::get('test', function () {
 });
 
 //admin routes
-Route::scopeBindings()->group(base_path('routes/web/admin.php'));
+//Route::scopeBindings()->group(base_path('routes/web/admin.php'));
 
 
 //web routes

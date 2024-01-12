@@ -19,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('global.configs')->group(function () {
 	Route::get('bug', [BugController::class, 'index']);
 
-	Route::domain(config('domain.base_domain'))->group(base_path('routes/web/fa.php'));
-	 Route::domain('en.' . config('domain.base_domain'))->group(base_path('routes/web/en.php'));
-	 Route::domain('ar.' . config('domain.base_domain'))->group(base_path('routes/web/ar.php'));
-	 Route::domain('ku.' . config('domain.base_domain'))->group(base_path('routes/web/ku.php'));
+	$locale = \App\Helpers\General::getLocaleFromDomain(request()->root());
+	if ($locale == 'fa') {
+		Route::domain(config('domain.base_domain'))->group(base_path('routes/web/fa.php'));
+		Route::domain(config('domain.base_domain'))->group(base_path('routes/web/admin.php'));
+	} else {
+		Route::domain("$locale." . config('domain.base_domain'))->group(base_path("routes/web/$locale.php"));
+		Route::domain("$locale." . config('domain.base_domain'))->group(base_path('routes/web/admin.php'));
+	}
 
 	//Comment
 	Route::prefix('comments')->name('comments.')->group(function () {

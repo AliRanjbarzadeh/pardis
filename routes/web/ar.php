@@ -11,7 +11,7 @@ use App\Http\Controllers\Front\ServiceController;
 use \Illuminate\Support\Facades\Route;
 
 //admin routes
-Route::scopeBindings()->group(base_path('routes/web/admin.php'));
+//Route::scopeBindings()->group(base_path('routes/web/admin.php'));
 
 //web routes
 Route::get('', [HomeController::class, 'index'])->name('index');
