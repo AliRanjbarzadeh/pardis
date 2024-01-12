@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'گالری تصویر',
-    'plural' => 'گالری تصاویر',
+    'singular' => 'Image gallery',
+    'plural' => 'Photo Gallery',
 
     //Fields
     'fields' => [],

@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'پزشک',
-	'plural' => 'پزشکان',
+	'singular' => 'Doctor',
+	'plural' => 'Doctors',
 
 	//Fields
 	'fields' => [],
@@ -16,19 +16,19 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'پزشکان',
+			'title' => 'Doctors',
 		],
-		'search' => 'جستجو در پزشکان',
-		'filter' => 'فیلتر پزشکان',
-		'medical_number' => 'شماره نظام پزشکی :',
-		'biography' => 'بیوگرافی',
-		'resumes' => 'مدارک و تحصیلات',
-		'clinics' => 'کلینیک ها',
-		'galleries' => 'گالری تصاویر',
-		'insurances' => 'بیمه ها',
-		'blogs' => 'مطالب',
-		'comments' => 'نظرات',
-		'work_hours' => 'ساعت حضور پزشک',
+		'search' => 'Search doctors',
+		'filter' => 'Doctors filter',
+		'medical_number' => 'Medical system number :',
+		'biography' => 'Biography',
+		'resumes' => 'Qualifications and education',
+		'clinics' => 'Clinics',
+		'galleries' => 'Photo Gallery',
+		'insurances' => 'Insurances',
+		'blogs' => 'Contents',
+		'comments' => 'Comments',
+		'work_hours' => 'Doctor\'s office hours',
 	],
 
 	//Actions
@@ -36,8 +36,8 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'reserve' => 'رزرو نوبت با :name',
-		'biography' => 'بیوگرافی و رزومه :name',
-		'resumes' => 'مدارک و رزومه :name',
+		'reserve' => 'Book an appointment with :name',
+		'biography' => ':name\'s biography and resume',
+		'resumes' => ':name\'s documents and resume',
 	],
 ];

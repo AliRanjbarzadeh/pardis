@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'رضایت مندی مشتری',
-	'plural' => 'رضایت مندی مشتریان',
+	'singular' => 'Testimonial',
+	'plural' => 'Testimonials',
 
 	//Fields
 	'fields' => [],

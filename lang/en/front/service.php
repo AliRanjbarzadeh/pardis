@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'خدمت',
-	'plural' => 'خدمات',
+	'singular' => 'Service',
+	'plural' => 'Services',
 
 	//Fields
 	'fields' => [],
@@ -16,9 +16,9 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'خدمات ما',
+			'title' => 'Services',
 		],
-		'ours' => 'خدمات ما',
+		'ours' => 'Our Services',
 	],
 
 	//Actions

@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'مطلب',
-	'plural' => 'مطالب',
+	'singular' => 'Blog',
+	'plural' => 'Blogs',
 
 	//Fields
 	'fields' => [],
@@ -16,15 +16,15 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'مجله پردیس',
+			'title' => 'Pardis journal',
 		],
-		'top_items' => 'برترین مقالات',
-		'search' => 'جستجو در مقالات',
+		'top_items' => 'Top articles',
+		'search' => 'Search articles',
 		'related' => [
-			'doctor' => 'پزشک مرتبط',
-			'clinic' => 'کلینیک مرتبط',
+			'doctor' => 'Related doctor',
+			'clinic' => 'Related clinic',
 		],
-		'comments_count' => '(:count نظر)',
+		'comments_count' => '(:count Comments)',
 	],
 
 	//Actions

@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'دسته بندی',
-	'plural' => 'دسته بندی ها',
+	'singular' => 'Category',
+	'plural' => 'Categories',
 
 	//Fields
 	'fields' => [],
@@ -16,7 +16,7 @@ return [
 	//Words
 	'words' => [
 		'blog' => [
-			'count' => '(:count مقاله)'
+			'count' => '(:count Article)'
 		]
 	],
 

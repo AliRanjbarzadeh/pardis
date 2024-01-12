@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'راه ارتباطی به کلینیک پردیس',
-	'plural' => 'راه های ارتباطی به کلینیک پردیس',
+	'singular' => 'The communication path to the campus clinic',
+	'plural' => 'Ways of communication to the Pardis clinic',
 
 	//Fields
 	'fields' => [],
@@ -16,23 +16,23 @@ return [
 	//Words
 	'words' => [
 		'path' => [
-			'singular' => 'مسیر',
+			'singular' => 'Direction',
 			'numbers' => [
-				'1' => 'اول',
-				'2' => 'دوم',
-				'3' => 'سوم',
-				'4' => 'چهارم',
-				'5' => 'پنجم',
-				'6' => 'ششم',
-				'7' => 'هفتم',
-				'8' => 'هشتم',
-				'9' => 'نهم',
-				'10' => 'دهم',
-				'11' => 'یازدهم',
-				'12' => 'دوازدهم',
-				'13' => 'سیزدهم',
-				'14' => 'چهاردهم',
-				'15' => 'پانزدهم',
+				'1' => 'First',
+				'2' => 'Second',
+				'3' => 'Third',
+				'4' => 'Fourth',
+				'5' => 'Fifth',
+				'6' => 'Sixth',
+				'7' => 'Seventh',
+				'8' => 'Eighth',
+				'9' => 'Ninth',
+				'10' => 'Tenth',
+				'11' => 'Eleventh',
+				'12' => 'Twelfth',
+				'13' => 'Thirteenth',
+				'14' => 'Fourteenth',
+				'15' => 'Fifteenth',
 			],
 		],
 	],

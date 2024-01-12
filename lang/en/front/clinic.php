@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'کلینیک',
-	'plural' => 'کلینیک ها',
+	'singular' => 'Clinic',
+	'plural' => 'Clinics',
 
 	//Fields
 	'fields' => [],
@@ -16,10 +16,10 @@ return [
 	//Words
 	'words' => [
 		'menu' => [
-			'title' => 'کلینیک های تخصصی',
+			'title' => 'Specialized clinics',
 		],
-		'doctors' => 'پزشکان مشغول در این کلینیک',
-		'insurances' => 'بیمه های طرف قرارداد',
+		'doctors' => 'Doctors working in this clinic',
+		'insurances' => 'Contract party insurances',
 	],
 
 	//Actions

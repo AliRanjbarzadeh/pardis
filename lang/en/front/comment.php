@@ -1,49 +1,49 @@
 <?php
 
 return [
-	'singular' => 'نظر',
-	'plural' => 'نظرات',
+	'singular' => 'Comment',
+	'plural' => 'Comments',
 
 	//Fields
 	'fields' => [
-		'full_name' => 'نام و نام خانوادگی',
-		'email' => 'پست الکترونیک',
-		'mobile' => 'موبایل',
-		'body' => 'نظر شما',
+		'full_name' => 'First name and Last name',
+		'email' => 'E-mail',
+		'mobile' => 'Mobile',
+		'body' => 'Your comment',
 	],
 
 	//Placeholders
 	'placeholders' => [
-		'full_name' => 'مثلا: رضا کمالزاده',
+		'full_name' => 'For example: Reza Kamalzadeh',
 		'email' => 'example@domain.com',
-		'mobile' => 'موبایل',
-		'body' => 'حداقل 10 کارکتر باید تایپ کنید ...',
+		'mobile' => 'Mobile',
+		'body' => 'You must type at least 10 letters...',
 	],
 
 	//Errors
 	'errors' => [
 		'full_name' => [
-			'required' => 'لطفا نام و نام خانوادگی را وارد کنید',
+			'required' => 'Please enter your first and last name',
 		],
 		'email' => [
-			'required' => 'لطفا پست الکترونیک را وارد کنید',
+			'required' => 'Please enter your email address',
 		],
 		'mobile' => [
-			'required' => 'لطفا موبایل را وارد کنید',
+			'required' => 'Please enter the mobile phone',
 		],
 		'body' => [
-			'required' => 'لطفا متن نظر را وارد کنید',
-			'min' => 'متن نظر نمی تواند کمتر از 10 کاراکتر باشد',
+			'required' => 'Please enter the text of the comment',
+			'min' => 'Comment text cannot be less than 10 characters',
 		],
 		'model_type' => [
-			'required' => 'خطایی رخ داده است، لطفا دوباره تلاش کنید',
+			'required' => 'An error occurred, please try again',
 		],
 	],
 
 	//Words
 	'words' => [
-		'user' => 'نظرات کاربران',
-		'save' => 'ثبت نظر',
+		'user' => 'User comments',
+		'save' => 'Register a comment',
 	],
 
 	//Actions
@@ -51,6 +51,6 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'privacy' => 'نشانی ایمیل شما منتشر نخواهد شد.',
+		'privacy' => 'Your email address will not be published.',
 	],
 ];

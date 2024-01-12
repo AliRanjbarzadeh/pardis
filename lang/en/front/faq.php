@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'سوال متداول',
-	'plural' => 'سوالات متداول',
+	'singular' => 'Frequently asked question',
+	'plural' => 'Frequently asked questions',
 
 	//Fields
 	'fields' => [],

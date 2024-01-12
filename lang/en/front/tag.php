@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'singular' => 'برچسب',
-	'plural' => 'برچسب ها',
+	'singular' => 'Label',
+	'plural' => 'Labels',
 
 	//Fields
 	'fields' => [],

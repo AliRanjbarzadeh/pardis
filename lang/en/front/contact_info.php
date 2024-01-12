@@ -1,47 +1,47 @@
 <?php
 
 return [
-	'singular' => 'اطلاعات تماس',
-	'plural' => 'اطلاعات تماس',
+	'singular' => 'Contacts',
+	'plural' => 'Contacts',
 
 	//Fields
 	'fields' => [
-		'name' => 'نام',
-		'content' => 'متن پیام',
-		'email' => 'پست الکترونیک',
-		'subject' => 'موضوع',
+		'name' => 'Name',
+		'content' => 'Message text',
+		'email' => 'E-mail',
+		'subject' => 'Issue',
 	],
 
 	//Placeholders
 	'placeholders' => [
-		'name' => 'نام',
-		'content' => 'متن پیام',
-		'email' => 'پست الکترونیک',
-		'subject' => 'موضوع',
+		'name' => 'Name',
+		'content' => 'Message text',
+		'email' => 'E-mail',
+		'subject' => 'Subject',
 	],
 
 	//Errors
 	'errors' => [
 		'name' => [
-			'required' => 'لطفا نام را وارد کنید',
+			'required' => 'Please enter the name',
 		],
 		'content' => [
-			'required' => 'لطفا متن پیام را وارد کنید',
+			'required' => 'Please enter the text of the message',
 		],
 		'email' => [
-			'required' => 'لطفا پست الکترونیک را وارد کنید',
+			'required' => 'Please enter your email address',
 		],
 		'subject' => [
-			'required' => 'لطفا موضوع را وارد کنید',
+			'required' => 'Please enter the subject',
 		],
 	],
 
 	//Words
 	'words' => [
-		'phone' => 'شماره تماس',
-		'contact' => 'تماس با کلینیک پردیس',
-		'communication' => 'راه های ارتباطی',
-		'contact_form' => 'فرم تماس با ما',
+		'phone' => 'Phone number',
+		'contact' => 'Contact the Pardis clinic',
+		'communication' => 'Ways of communication',
+		'contact_form' => 'Contact us form',
 	],
 
 	//Actions

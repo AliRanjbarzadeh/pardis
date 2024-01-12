@@ -16,7 +16,7 @@ return [
 	//Words
 	'words' => [
 		'app' => [
-			'name' => 'کلینیک پردیس',
+			'name' => 'Pardis Clinic',
 		],
 		'language' => [
 			'fa' => 'فارسی',
@@ -26,38 +26,38 @@ return [
 		],
 		'about_us' => [
 			'menu' => [
-				'title' => 'درباره ما',
+				'title' => 'About us',
 			],
 		],
 		'contact_us' => [
 			'menu' => [
-				'title' => 'تماس با ما',
+				'title' => 'Contact us',
 			],
 		],
 		'reservation' => [
 			'menu' => [
-				'title' => 'نوبت دهی آنلاین',
+				'title' => 'Online Reservation',
 			],
 		],
 		'view' => [
-			'all' => 'مشاهده همه',
-			'more' => 'مشاهده بیشتر',
+			'all' => 'View all',
+			'more' => 'View more',
 		],
 		'filter' => [
-			'all' => 'نمایش همه',
+			'all' => 'Show all',
 		],
-		'more_info' => 'اطلاعات بیشتر',
-		'read_more' => 'بیشتر بخوانید',
-		'all' => 'همه',
-		'and' => 'و',
-		'has' => 'دارد',
-		'has_not' => 'ندارد',
+		'more_info' => 'More information',
+		'read_more' => 'Read more',
+		'all' => 'All',
+		'and' => 'and',
+		'has' => 'Has it',
+		'has_not' => 'Does not have',
 		'footer' => [
-			'related_links' => 'لینک های مرتبط',
-			'follow_us' => 'ما را در شبکه های اجتماعی دنبال کنید',
-			'contact_info' => 'اطلاعات تماس',
-			'address' => 'آدرس :',
-			'phone_number' => 'شماره تماس :',
+			'related_links' => 'Related Links',
+			'follow_us' => 'Follow us on social networks',
+			'contact_info' => 'Contacts',
+			'address' => 'Address :',
+			'phone_number' => 'Phone number :',
 		],
 	],
 
@@ -66,7 +66,7 @@ return [
 
 	//Sentences
 	'sentences' => [
-		'copy_right' => 'تمام حقوق مادی و معنوی برای <span class="text-secondary-950">کلینیک پردیس</span> محفوظ است',
-		'developer' => 'طراحی, پیاده سازی و سئو توسط <a class="text-secondary-950" href="http://afrandev.com/" target="_blank" rel="noopener noreferrer">افران</a>',
+		'copy_right' => 'All intellectual and material rights are reserved for the <span class="text-secondary-950">Pardis clinic</span>',
+		'developer' => 'Design, implementation and SEO by <a class="text-secondary-950" href="http://afrandev.com/" target="_blank" rel="noopener noreferrer">Afran Dev</a>',
 	],
 ];

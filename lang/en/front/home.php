@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'singular' => 'خانه',
+    'singular' => 'Home',
     'plural' => '',
 
     //Fields
