@@ -142,7 +142,7 @@ trait HasMeta
 				return Arr::only($item, ['meta_key', 'meta_value']);
 			}
 			return $item->forCreate();
-		})->all();
+		})->filter(fn($item) => !is_null($item['meta_value']))->all();
 	}
 
 	private function parseMetasUpdate(Collection|MetaDto|array $metas): array
