@@ -9,7 +9,7 @@
 	@include('front.layouts.header.seo')
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon"/>
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>

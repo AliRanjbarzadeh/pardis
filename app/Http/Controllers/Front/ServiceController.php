@@ -40,6 +40,9 @@ class ServiceController extends Controller
 		//set for breadcrumb
 		$this->setModel($service);
 
+		//set image for seo
+		$service->seo->setImageUrl($service->feature_image->medium);
+
 		//set seo items
 		$this->setSeo($service->seo);
 		$this->setPageTitle($service->seo->title);

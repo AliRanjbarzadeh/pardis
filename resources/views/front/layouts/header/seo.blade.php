@@ -37,7 +37,7 @@
 	<meta name="twitter:site" content="@pardisClinic">
 	<meta name="twitter:title" content="{{ $seo->title }}"/>
 	<meta name="twitter:description" content="{{ $seo->description }}"/>
-	<meta name="twitter:image" content="{{ asset('assets/front/images/logo.png') }}"/>
+	<meta name="twitter:image" content="{{ $seo->image_url ?? asset('assets/front/images/logo.png') }}"/>
 
 	<meta name="keywords" content="{{ $seo->keywords }}">
 	<meta name="description" content="{{ $seo->description }}">

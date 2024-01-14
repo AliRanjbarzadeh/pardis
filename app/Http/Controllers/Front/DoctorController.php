@@ -57,6 +57,9 @@ class DoctorController extends Controller
 			},
 		]);
 
+		//set image for seo
+		$doctor->seo->setImageUrl($doctor->feature_image->medium);
+
 		//set seo items
 		$this->setSeo($doctor->seo);
 		$this->setPageTitle($doctor->seo->title);

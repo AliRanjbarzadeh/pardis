@@ -38,6 +38,9 @@ class ClinicController extends Controller
 	{
 		$clinic = $this->service->findByLink($seoLink);
 
+		//set image for seo
+		$clinic->seo->setImageUrl($clinic->feature_image->medium);
+
 		//set for breadcrumb
 		$this->setModel($clinic);
 		$this->setPageTitle($clinic->seo->title);

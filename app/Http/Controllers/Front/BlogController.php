@@ -52,6 +52,9 @@ class BlogController extends Controller
 			abort(404);
 		}
 
+		//set image for seo
+		$blog->seo->setImageUrl($blog->feature_image->medium);
+
 		//set for breadcrumb
 		$this->setModel($blog);
 

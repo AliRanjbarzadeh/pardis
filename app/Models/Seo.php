@@ -13,6 +13,7 @@ class Seo extends Model
 	use HasFactory;
 
 	protected $guarded = ['id'];
+	protected ?string $imageUrl = null;
 
 	/*=============Scopes==============*/
 
@@ -83,8 +84,21 @@ class Seo extends Model
 		return true;
 	}
 
+	/**
+	 * @param string|null $imageUrl
+	 */
+	public function setImageUrl(?string $imageUrl): void
+	{
+		$this->imageUrl = $imageUrl;
+	}
+
+	public function getImageUrlAttribute(): ?string
+	{
+		return $this->imageUrl;
+	}
+
 	/*=============Relations==============*/
-	public function modelable(): MorphTo
+	public function model(): MorphTo
 	{
 		return $this->morphTo();
 	}
