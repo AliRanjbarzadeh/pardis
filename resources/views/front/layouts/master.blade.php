@@ -7,9 +7,7 @@
 	<meta name="baseUrl" content="{{ url('') }}">
 
 	@include('front.layouts.header.seo')
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
+	@stack('seo')
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>

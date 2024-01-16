@@ -58,3 +58,42 @@
 @push('styles')
 	@vite('resources/css/pages/blog/blog-details.scss')
 @endpush
+
+@push('seo')
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Article",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://google.com/article"
+			},
+			"headline": "{{ $blog->seo->title }}",
+			"image": [
+				"{{ $blog->feature_image->url }}",
+				@if($blog->feature_image->thumbnail != $blog->feature_image->url)"{{ $blog->feature_image->thumbnail }}",@endif
+
+				@if($blog->feature_image->medium != $blog->feature_image->url)"{{ $blog->feature_image->medium }}",@endif
+
+				@if($blog->feature_image->large != $blog->feature_image->url)"{{ $blog->feature_image->large }}",@endif
+
+			],
+			"datePublished" : "{{ $blog->created_at->toISOString() }} ",
+			"dateModified" : "{{ $blog->updated_at->toISOString() }}",
+			"author" : {
+				"@type": "Company",
+				"name": "Afran"
+			},
+			"publisher" : {
+				"@type": "Organization",
+				"name": "PardisCancer",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ asset('assets/front/images/logo-verical.png') }}"
+				}
+			},
+			"description" : "{{ $blog->seo->description }}"
+
+		}
+	</script>
+@endpush

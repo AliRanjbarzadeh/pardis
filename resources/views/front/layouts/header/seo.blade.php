@@ -3,8 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, user-scalable=no"/>
 <!--========= Favicon File ======-->
-<link rel="SHORTCUT ICON" href="{{ asset('assets/logo.png') }}"/>
-<!--====================seo=======================-->
+<link rel="SHORTCUT ICON" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
+<!--====================SEO=======================-->
 <meta name="application-name" content="">
 <meta name="theme-color" content="#974784"/>
 <meta name="msapplication-navbutton-color" content="#974784">
