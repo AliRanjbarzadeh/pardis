@@ -61,6 +61,12 @@
 	<meta name="robots" content="follow, index"/>
 @endif
 
+@if(config('app.locale') == 'fa')
+	<script type="text/javascript">
+		!function(){var i="9Z7q1F",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+	</script>
+@endif
+
 @if(!request()->routeIs('index'))
 	{{ \Diglactic\Breadcrumbs\Breadcrumbs::view('front.layouts.breadcrumb-json') }}
 @endif

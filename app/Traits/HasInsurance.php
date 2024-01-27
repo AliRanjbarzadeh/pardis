@@ -58,15 +58,15 @@ trait HasInsurance
 	private function parseInsuranceItems(Collection|InsuranceItemDto $insuranceItems): int|Collection
 	{
 		if ($insuranceItems instanceof InsuranceItemDto) {
-			return $insuranceItems->insuranceId;
+			return collect([$insuranceItems->insuranceId => $insuranceItems->toArray()]);
 		}
 
 		if ($insuranceItems->isEmpty()) {
 			throw new InsuranceItemException("No id(s) provided");
 		}
 
-		return $insuranceItems->map(function (InsuranceItemDto $item) {
-			return $item->toArray();
+		return $insuranceItems->mapWithKeys(function (InsuranceItemDto $item) {
+			return [$item->insuranceId => $item->toArray()];
 		});
 	}
 }

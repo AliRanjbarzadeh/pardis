@@ -42,7 +42,6 @@
 				@endif
 			</div>
 
-
 			<section>
 				@include('front.shared.comments-section', ['comments' => $blog->comments, 'count' => $blog->comments_count])
 			</section>

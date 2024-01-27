@@ -1,50 +1,52 @@
 @layer components {
-	.html-content {
+	.content {
 		iframe {
-			@apply max-w-full my-2;
+		 @apply max-w-full my-2;
 		}
-
+	   
 		h1 {
-			@apply text-3xl font-semibold text-secondary-950 mb-3 mt-6;
+		 @apply text-3xl font-semibold text-secondary-950 mb-3 mt-6;
 		}
-
+	   
 		h2 {
-			@apply text-2xl font-semibold text-secondary-950 mb-3 mt-6;
+		 @apply text-2xl font-semibold text-secondary-950 mb-3 mt-6;
 		}
-
+	   
 		h3 {
-			@apply text-xl font-semibold text-secondary-950 mb-3 mt-6;
+		 @apply text-xl font-semibold text-secondary-950 mb-3 mt-6;
 		}
-
+	   
 		h4 {
-			@apply text-lg font-semibold text-secondary-950 mb-3 mt-6;
+		 @apply text-lg font-semibold text-secondary-950 mb-3 mt-6;
 		}
-
+	   
 		h5 {
-			@apply text-base font-semibold text-secondary-950 mb-3 mt-6;
+		 @apply text-base font-semibold text-secondary-950 mb-3 mt-6;
 		}
-
+	   
 		p {
-			@apply mb-3 leading-8 text-gray-700;
+		 @apply mb-3 leading-8 text-gray-700;
 		}
-
+	   
 		a {
-			@apply text-blue-600 font-semibold;
+		 @apply text-secondary-950 font-semibold;
 		}
-
+	   
 		img {
-			@apply my-3 rounded-lg block;
+		 @apply my-3 rounded-lg block;
 		}
-
+	   
 		ul,
 		ol {
-			@apply mb-4 list-disc list-inside;
+		 @apply mb-4 list-disc list-inside;
 		}
-
-		blockquote {
-			@apply border-r-4 border-secondary-800 p-4 bg-secondary-100 mb-4 shadow;
+		blockquote{
+		 @apply border-r-4 border-secondary-950 p-4 bg-secondary-950 bg-opacity-10 mb-4 rounded-ee-xl rounded-se-xl font-bold;
+		 p {
+			@apply m-0;
+		 }
 		}
-	}
+	   }
 }
 
 body {
