@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 import '../home/blog-latest.js';
 import '../home/clinics-slider.js';
-import '../home/insurances-slider.js';
+import '@sharedJs/insurances-slider.js';
 import '@sharedJs/photo-gallery.js';
 
 $(document).ready(function () {

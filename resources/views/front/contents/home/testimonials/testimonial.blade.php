@@ -1,8 +1,8 @@
-<section class="bg-white pt-14 pb-16">
+<section class="bg-white pt-6 md:pt-14 pb-16">
 	<div class="custom-container">
 		@include('front.shared.section-title', [
 			'title' => __('front/testimonial.plural'),
-			'class' => 'pb-12',
+			'class' => 'md:pb-12',
 		])
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-11">
 			<div>

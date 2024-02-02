@@ -2,7 +2,7 @@
 	@include('front.layouts.footer.footer-title', ['title' => __('front/global.words.footer.follow_us')])
 	<div class="flex gap-2">
 		@foreach($contactInfo->socialNetworks as $socialNetwork)
-			<a class="w-9 h-9" href="{{ $socialNetwork->address_url }}">
+			<a class="w-7 h-7" href="{{ $socialNetwork->address_url }}">
 				<img src="{{ asset('assets/front/icons/'.$socialNetwork->socialNetworkType->icon.'.svg') }}" alt="{{ $socialNetwork->title }}">
 			</a>
 		@endforeach

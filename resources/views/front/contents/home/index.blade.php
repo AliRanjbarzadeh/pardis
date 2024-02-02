@@ -13,27 +13,23 @@
 
 		@include('front.contents.home.services.services-section', ['title' => $page->getMetaValue('service')['title'], 'description' => $page->getMetaValue('service')['description'], 'services' => $services])
 
-		<div class="hidden md:block">
-			@if($testimonials->isNotEmpty())
-				@include('front.contents.home.testimonials.testimonial', ['testimonials' => $testimonials])
-			@endif
+		@if($testimonials->isNotEmpty())
+			@include('front.contents.home.testimonials.testimonial', ['testimonials' => $testimonials])
+		@endif
 
-			@if($page->faqs->isNotEmpty())
-				@include('front.contents.home.faqs.faq-section', ['faqs' => $page->faqs])
-			@endif
+		@if($page->faqs->isNotEmpty())
+			@include('front.contents.home.faqs.faq-section', ['faqs' => $page->faqs])
+		@endif
 
-			<div class="bg-white">
-				<div class="custom-container">
-					@include('front.shared.insurances.insurances-section', ['title' => $page->getMetaValue('insurance')['title'], 'insurances' => $insurances])
-				</div>
+		<div class="bg-white">
+			<div class="custom-container">
+				@include('front.shared.insurances.insurances-section', ['title' => $page->getMetaValue('insurance')['title'], 'insurances' => $insurances])
 			</div>
 		</div>
 
 		@include('front.contents.home.blogs.blog-latest-section', ['blogs' => $blogs, 'title' => $page->getMetaValue('blog')['title']])
 
-		<div class="hidden md:block">
-			@include('front.contents.home.contacts.contact-section', ['communications' => $communications])
-		</div>
+		@include('front.contents.home.contacts.contact-section', ['communications' => $communications])
 	</main>
 @endsection
 

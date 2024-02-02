@@ -1,5 +1,1 @@
-<svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<path d="M16.7094 23.9503L13.7839 26.7964C13.2768 27.2894 12.4282 27.0712 12.2228 26.3941L10.2734 19.9766" class="stroke-current" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M19.9805 15.4799C19.9805 15.4799 16.3128 18.7893 14.4315 20.4879C13.869 20.995 13.9158 21.8875 14.525 22.3366L22.1438 27.965C22.8932 28.5189 23.9642 28.1124 24.1583 27.2L27.8997 9.56677C28.081 8.71394 27.2438 8.00136 26.4306 8.31444L4.45105 16.7918C3.80363 17.0411 3.8348 17.9662 4.49638 18.173L10.2721 19.975" class="stroke-current" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-	
+<img class="w-full h-full" src="{{ asset('assets/front/icons/telegram.svg') }}" alt="">

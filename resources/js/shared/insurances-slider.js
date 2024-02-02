@@ -1,9 +1,12 @@
 import {Swiper} from 'swiper'
-import {Pagination} from 'swiper/modules'
+import {Autoplay, Pagination} from 'swiper/modules'
 
 window.addEventListener('DOMContentLoaded', function () {
 	new Swiper('.insurances-swiper', {
-		modules: [Pagination],
+		modules: [Pagination, Autoplay],
+		autoplay: {
+			delay: 2000
+		},
 		breakpoints: {
 			320: {
 				spaceBetween: 15,

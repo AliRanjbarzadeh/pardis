@@ -3,9 +3,9 @@ import './image-slider.js';
 import './clinics-slider.js';
 import './doctors-slider.js';
 import './faqs.js';
-import './insurances-slider.js';
 import './blog-latest.js';
 import './testimonial.js'
 import '@sharedJs/tabs.js';
 import '@sharedJs/map.js';
 import '@sharedJs/modal.js';
+import '@sharedJs/insurances-slider.js';

@@ -1,2 +1,2 @@
 import './doctors-slider.js';
-import './insurances-slider.js';
+import '@sharedJs/insurances-slider.js';
