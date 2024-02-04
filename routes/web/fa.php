@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('test', function () {
 //	\Illuminate\Support\Facades\Artisan::call('view:clear');
 //	\Illuminate\Support\Facades\Artisan::call('config:clear');
+	\Illuminate\Support\Facades\Artisan::call('seed:locales PermissionSeeder --yes');
 });
 
 //admin routes

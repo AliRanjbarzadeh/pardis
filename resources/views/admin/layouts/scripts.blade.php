@@ -52,9 +52,6 @@
 <script type="text/javascript" src="{{ asset('assets/admin/vendor/libs/dropzone/dropzone.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/admin/vendor/libs/dropzone/options.js') }}"></script>
 
-<!-- Neshan -->
-<script type="text/javascript" src="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.js"></script>
-
 <!-- Main JS -->
 <script type="text/javascript" src="{{ asset("assets/admin/js/main.js") }}?ver={{ $resourceVersion }}"></script>
 <script type="text/javascript" src="{{ asset("assets/admin/js/default-actions.js") }}?ver={{ $resourceVersion }}"></script>

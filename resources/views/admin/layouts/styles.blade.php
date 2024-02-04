@@ -26,8 +26,5 @@
 <!--Dropzone-->
 <link type="text/css" rel="stylesheet" href="{{ asset("assets/admin/vendor/libs/dropzone/dropzone.min.css") }}"/>
 
-<!--Neshan-->
-<link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.css"/>
-
 <!--Custom-->
 <link type="text/css" rel="stylesheet" href="{{ asset("assets/admin/css/custom.css") }}?ver={{ $resourceVersion }}"/>

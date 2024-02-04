@@ -83,7 +83,15 @@
 	</div>
 @endsection
 
+@push('styles')
+	<!--Neshan-->
+	<link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.css"/>
+@endpush
+
 @push('scripts')
+	<!-- Neshan -->
+	<script type="text/javascript" src="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.js"></script>
+
 	<script type="text/javascript" src="{{ asset('assets/admin/js/pages/contact/settings.js') }}?ver={{ $resourceVersion }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/admin/shared/js/map.js') }}?ver={{ $resourceVersion }}"></script>
 @endpush
