@@ -15,6 +15,9 @@ class DatatablesFilterDto
 		public ?int    $parent = null,
 		public bool    $hasChildren = false,
 		public ?int    $categoryId = null,
+		public ?array  $ids = null,
+		public ?array  $customColumns = null,
+		public bool    $hasChildRelated = false,
 	)
 	{
 	}

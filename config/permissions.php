@@ -56,7 +56,7 @@ return [
 				],
 				'comments' => [
 					'name' => 'نظرات',
-					'permissions' => array_merge(Arr::only($basePerms, ['destroy']), $approveRejectPerm),
+					'permissions' => array_merge(Arr::only($basePerms, ['index', 'destroy']), $approveRejectPerm),
 				],
 			],
 		],
@@ -80,7 +80,7 @@ return [
 			'related_permissions' => [
 				'comments' => [
 					'name' => 'نظرات',
-					'permissions' => array_merge(Arr::only($basePerms, ['destroy']), $approveRejectPerm),
+					'permissions' => array_merge(Arr::only($basePerms, ['index', 'destroy']), $approveRejectPerm),
 				],
 			],
 		],

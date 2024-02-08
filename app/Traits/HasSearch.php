@@ -96,4 +96,11 @@ trait HasSearch
 			});
 		}
 	}
+
+	public function scopeCustomColumnSearch(Builder $query, string $column, string $operator, mixed $value): void
+	{
+		if (!is_null($value)) {
+			$query->where($column, $operator, $value);
+		}
+	}
 }

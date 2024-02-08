@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\PermissionHelper;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -29,6 +30,9 @@ class AppServiceProvider extends ServiceProvider
 
 		if ($request->segment(1) === 'admin') {
 			$this->app->register(AdminDashboardMenuProvider::class);
+			$this->app->bind('permission', function () {
+				return new PermissionHelper;
+			});
 
 			//Datatables html
 			Builder::useVite();

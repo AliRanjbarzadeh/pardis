@@ -27,4 +27,11 @@ class AuthController extends Controller
 			->withInput()
 			->withErrors(['message' => __('admin/auth.validations.exists')]);
 	}
+
+	public function logout()
+	{
+		auth('admin')->logout();
+
+		return redirect(route('admin.auth.index'));
+	}
 }

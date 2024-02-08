@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryChildController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\InsuranceController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\PopupController;
 use App\Http\Controllers\Admin\PriorityController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SpecialityController;
@@ -34,6 +36,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 	//Dashboard
 	Route::middleware('auth.admin:admin')->group(function () {
+		//Logout
+		Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
 		//Categories
 		Route::macro('categories', function (string $type, bool $hasChild) {
 			Route::prefix('categories')->name('categories.')->group(function () use ($type, $hasChild) {
@@ -98,83 +103,86 @@ Route::prefix('admin')->name('admin.')->group(function () {
 				->except('show');
 		});
 
+		//Datatables
+		Route::macro('datatable', function (string $routeName, string $routeController, ?string $prefix = null) {
+			Route::prefix($prefix ?? $routeName)->name("$routeName.")->group(function () use ($routeController) {
+				Route::post('datatable', [$routeController, 'datatable'])->name('datatable');
+			});
+		});
+
 		//Dashboard
 		Route::get('/', [DashboardController::class, 'index'])->name('index');
 
+		//Roles
+		Route::datatable('roles', RoleController::class);
+		Route::resource('roles/', RoleController::class, ['trailingSlashExcept' => 'destroy']);
+
+		//Admins
+		Route::datatable('admins', AdminController::class);
+		Route::resource('admins/', AdminController::class, ['trailingSlashExcept' => 'destroy']);
+
 		//Insurances
-		Route::prefix('insurances')->name('insurances.')->group(function () {
-			Route::post('datatable', [InsuranceController::class, 'datatable'])->name('datatable');
-		});
+		Route::datatable('insurances', InsuranceController::class);
 		Route::categories('insurance', true);
 		Route::resource('insurances/', InsuranceController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Specialities
-		Route::prefix('specialities')->name('specialities.')->group(function () {
-			Route::post('datatable', [SpecialityController::class, 'datatable'])->name('datatable');
-		});
+		Route::datatable('specialities', SpecialityController::class);
 		Route::resource('specialities/', SpecialityController::class, ['trailingSlashExcept' => 'destroy']);
 
 		//Blogs
 		Route::prefix('blogs')->name('blogs.')->group(function () {
-			Route::post('datatable', [BlogController::class, 'datatable'])->name('datatable');
-
 			//Settings
 			Route::settings(BlogController::class);
 
 			//Search
 			Route::post('search', [BlogController::class, 'search'])->name('search');
 		});
+		Route::datatable('blogs', BlogController::class);
 		Route::categories('blog', false);
 		Route::comments('blog');
 		Route::resource('blogs/', BlogController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Services
 		Route::prefix('services')->name('services.')->group(function () {
-			Route::post('datatable', [ServiceController::class, 'datatable'])->name('datatable');
-
 			//Settings
 			Route::settings(ServiceController::class);
 		});
+		Route::datatable('services', ServiceController::class);
 		Route::comments('service');
 		Route::resource('services/', ServiceController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Clinics
 		Route::prefix('clinics')->name('clinics.')->group(function () {
-			Route::post('datatable', [ClinicController::class, 'datatable'])->name('datatable');
-
 			//Settings
 			Route::settings(ClinicController::class);
 		});
+		Route::datatable('clinics', ClinicController::class);
 		Route::resource('clinics/', ClinicController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Doctors
 		Route::prefix('doctors')->name('doctors.')->group(function () {
-			Route::post('datatable', [DoctorController::class, 'datatable'])->name('datatable');
-
 			//Settings
 			Route::settings(DoctorController::class);
 		});
+		Route::datatable('doctors', DoctorController::class);
 		Route::comments('doctor');
 		Route::resource('doctors/', DoctorController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Gallery
-		Route::prefix('galleries')->name('galleries.')->group(function () {
-			Route::post('datatable', [GalleryController::class, 'datatable'])->name('datatable');
-		});
+		Route::datatable('galleries', GalleryController::class);
 		Route::categories('gallery', false);
 		Route::resource('galleries/', GalleryController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Testimonials
-		Route::prefix('testimonials')->name('testimonials.')->group(function () {
-			Route::post('datatable', [TestimonialController::class, 'datatable'])->name('datatable');
-		});
+		Route::datatable('testimonials', TestimonialController::class);
 		Route::resource('testimonials/', TestimonialController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Popups
 		Route::prefix('popups')->name('popups.')->group(function () {
-			Route::post('datatable', [PopupController::class, 'datatable'])->name('datatable');
 			Route::patch('{popup}/changeStatus', [PopupController::class, 'changeStatus'])->name('changeStatus');
 		});
+		Route::datatable('popups', PopupController::class);
 		Route::resource('popups/', PopupController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//Home
@@ -184,9 +192,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 		Route::sliders('home');
 
 		//Communications
-		Route::prefix('communications')->name('communications.')->group(function () {
-			Route::post('datatable', [CommunicationController::class, 'datatable'])->name('datatable');
-		});
+		Route::datatable('communications', CommunicationController::class);
 		Route::resource('communications/', CommunicationController::class, ['trailingSlashExcept' => 'destroy'])->except('show');
 
 		//About
@@ -197,10 +203,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 		//Contact
 		Route::prefix('contacts')->name('contacts.')->group(function () {
-			Route::post('datatable', [ContactController::class, 'datatable'])->name('datatable');
-
 			Route::settings(ContactController::class);
 		});
+		Route::datatable('contacts', ContactController::class);
 		Route::resource('contacts/', ContactController::class, [
 			'trailingSlashExcept' => 'destroy',
 			'parameters' => [

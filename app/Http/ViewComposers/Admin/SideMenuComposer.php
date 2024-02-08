@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers\Admin;
 
+use App\Http\ViewComposers\Admin\Menus\AdminMenu;
 use App\Http\ViewComposers\Admin\Menus\BlogMenu;
 use App\Http\ViewComposers\Admin\Menus\ClinicMenu;
 use App\Http\ViewComposers\Admin\Menus\CommunicationMenu;
@@ -10,6 +11,7 @@ use App\Http\ViewComposers\Admin\Menus\GalleryMenu;
 use App\Http\ViewComposers\Admin\Menus\InsuranceMenu;
 use App\Http\ViewComposers\Admin\Menus\PagesMenus;
 use App\Http\ViewComposers\Admin\Menus\PopupMenu;
+use App\Http\ViewComposers\Admin\Menus\RoleMenu;
 use App\Http\ViewComposers\Admin\Menus\SeparatorMenu;
 use App\Http\ViewComposers\Admin\Menus\ServiceMenu;
 use App\Http\ViewComposers\Admin\Menus\SettingsMenus;
@@ -39,6 +41,12 @@ class SideMenuComposer
 
 			//Separator
 			SeparatorMenu::getMenu($request, __('admin/global.words.basic_information')),
+
+			//Role
+			RoleMenu::getMenu($request),
+
+			//Admin
+			AdminMenu::getMenu($request),
 
 			//Insurances
 			InsuranceMenu::getMenu($request),

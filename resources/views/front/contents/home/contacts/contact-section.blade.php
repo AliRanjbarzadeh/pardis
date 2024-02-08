@@ -47,7 +47,7 @@
 					</div>
 				@endforeach
 			</div>
-			<div id="map"></div>
+			<div id="map" class="h-[440px]"></div>
 			<span id="map-location" class="hidden">{{ $contactInfo?->getMetaValue('location', true) }}</span>
 		</div>
 	</section>

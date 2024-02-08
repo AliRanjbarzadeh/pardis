@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Facades\Permission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Yajra\DataTables\EloquentDatatable;
@@ -9,6 +10,15 @@ use Yajra\DataTables\Facades\DataTables;
 
 class DatatableService
 {
+	private array $permissions = [];
+
+	public function setPermissions(array $permissions): static
+	{
+		$this->permissions = $permissions;
+
+		return $this;
+	}
+
 	public function datatable($query, string $name, bool $hasDefaultActions = true, ?array $customActions = null, ?array $urlParams = null, bool $hasPriority = false, array $defaultActions = ['edit', 'delete']): EloquentDatatable
 	{
 		$datatable = DataTables::eloquent($query)
@@ -44,6 +54,10 @@ class DatatableService
 						}
 						$actions[$key]['url'] = route($action['url'], $params);
 					}
+
+					if (isset($action['permKey']) && !$this->checkPermission($action['permKey'])) {
+						unset($actions[$key]);
+					}
 				}
 
 				return view('datatables::actions', compact('actions'));
@@ -74,6 +88,7 @@ class DatatableService
 				'url' => "admin.$name.edit",
 				'icon' => 'bx bx-edit-alt',
 				'isButton' => false,
+				'permKey' => 'edit',
 			];
 		}
 
@@ -84,9 +99,18 @@ class DatatableService
 				'icon' => 'bx bx-trash text-danger',
 				'onclick' => 'deleteItem(this);',
 				'isButton' => true,
+				'permKey' => 'destroy',
 			];
 		}
 
 		return $actions;
+	}
+
+	private function checkPermission($permissionKey): bool
+	{
+		if (!isset($this->permissions[$permissionKey])) {
+			return true;
+		}
+		return Permission::can($this->permissions[$permissionKey]);
 	}
 }

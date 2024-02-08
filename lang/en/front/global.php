@@ -17,6 +17,7 @@ return [
 	'words' => [
 		'app' => [
 			'name' => 'Pardis Clinic',
+			'sitemap_name' => 'Pardis Cancer Clinic',
 		],
 		'language' => [
 			'fa' => 'فارسی',

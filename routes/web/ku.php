@@ -8,6 +8,7 @@ use App\Http\Controllers\Front\DoctorController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\InsuranceController;
 use App\Http\Controllers\Front\ServiceController;
+use App\Http\Controllers\Front\SiteMapController;
 use \Illuminate\Support\Facades\Route;
 
 //admin routes
@@ -58,6 +59,10 @@ Route::prefix('پەیوەندیمان-پێوەبکە')->name('contact.')->group(
 //admin routes
 Route::scopeBindings()->group(base_path('routes/web/admin.php'));
 
+//sitemap
+Route::get('sitemap.xml', [SiteMapController::class, 'index'])->name('sitemap.xml');
+
+//amp
 Route::prefix('amp')->name('amp.')->group(function () {
 	Route::get('{seoLink}', [AmpController::class, 'index'])->name('index');
 	Route::post('{blog}/rate', [AmpController::class, 'rate'])->name('rate');

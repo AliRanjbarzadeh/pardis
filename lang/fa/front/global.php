@@ -17,6 +17,7 @@ return [
 	'words' => [
 		'app' => [
 			'name' => 'کلینیک پردیس',
+			'sitemap_name' => 'کلینیک سرطان پردیس',
 		],
 		'language' => [
 			'fa' => 'فارسی',

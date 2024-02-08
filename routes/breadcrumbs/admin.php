@@ -106,6 +106,12 @@ Breadcrumbs::macro('adminPage', function (string $page, string $title, array $op
 	}
 });
 
+//Role
+Breadcrumbs::admin(name: 'admin.roles', title: __('admin/role.plural'));
+
+//Admin
+Breadcrumbs::admin(name: 'admin.admins', title: __('admin/admin.plural'));
+
 //Insurances
 Breadcrumbs::admin('admin.insurances', __('admin/insurance.plural'));
 Breadcrumbs::adminCategories('insurance', __('admin/category.plural'), true);
