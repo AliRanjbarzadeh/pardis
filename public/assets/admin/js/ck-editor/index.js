@@ -31,6 +31,16 @@ window.addEventListener('DOMContentLoaded', function () {
 					'X-CSRF-TOKEN': csrfToken(),
 				}
 			},
+			htmlSupport: {
+				allow: [
+					{
+						name: /.*/,
+						attributes: true,
+						classes: true,
+						styles: true
+					}
+				]
+			}
 		}).catch(handleSampleError);
 	}
 });

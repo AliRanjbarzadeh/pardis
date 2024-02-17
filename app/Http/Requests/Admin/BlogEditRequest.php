@@ -25,8 +25,6 @@ class BlogEditRequest extends FormRequest
 	{
 		return [
 			'category_id' => 'required',
-			'clinic_id' => 'required',
-			'doctor_id' => 'required',
 			'title' => 'required',
 			'description' => 'required',
 			'featureImage' => 'bail',

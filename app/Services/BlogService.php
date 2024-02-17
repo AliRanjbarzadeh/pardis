@@ -40,7 +40,7 @@ class BlogService
 	public function datatable(DatatablesFilterDto $dto): JsonResponse
 	{
 		$blogs = Blog::query()
-			->regexpSearch($dto->term, ['title', 'description'])
+			->regexpSearch($dto->term, ['title'])
 			->dateRangeSearch($dto->fromDate, $dto->toDate)
 			->categorySearch($dto->categoryId)
 			->with(['categories']);
@@ -116,10 +116,14 @@ class BlogService
 			$blog->categories()->sync([$dto->categoryId]);
 
 			//doctor
-			$blog->doctors()->sync([$dto->doctorId]);
+			if (!is_null($dto->doctorId)) {
+				$blog->doctors()->sync([$dto->doctorId]);
+			}
 
 			//clinic
-			$blog->clinics()->sync([$dto->clinicId]);
+			if (!is_null($dto->clinicId)) {
+				$blog->clinics()->sync([$dto->clinicId]);
+			}
 
 			//feature image
 			$featureImage = $blog->getMediumByName('featureImage');

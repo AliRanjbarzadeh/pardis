@@ -46,7 +46,7 @@
 <script type="text/javascript" src="{{ asset("assets/admin/vendor/libs/axios/axios-defaults.js") }}?ver={{ $resourceVersion }}"></script>
 
 <!-- CKEditor -->
-<script type="text/javascript" src="{{ asset("assets/admin/vendor/libs/ck-editor/ckeditor.js") }}"></script>
+{{--<script type="text/javascript" src="{{ asset("assets/admin/vendor/libs/ck-editor/ckeditor.js") }}"></script>--}}
 
 <!-- Dropzone -->
 <script type="text/javascript" src="{{ asset('assets/admin/vendor/libs/dropzone/dropzone.min.js') }}"></script>

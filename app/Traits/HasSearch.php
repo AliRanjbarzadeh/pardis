@@ -60,16 +60,23 @@ trait HasSearch
 
 		if (!empty(trim($term))) {
 			$terms = explode(' ', $term);
-			$query->where(function (Builder $query) use ($columns, $terms) {
-				foreach ($terms as $termKey => $termValue) {
-					foreach ($columns as $key => $column) {
-						if ($termKey == 0 && $key == 0) {
-							$query->where($column, 'regexp', $termValue);
-						} else {
-							$query->orWhere($column, 'regexp', $termValue);
-						}
+			$query->where(function (Builder $query) use ($columns, $term, $terms) {
+				foreach ($columns as $key => $column) {
+					if ($key == 0) {
+						$query->where($column, 'regexp', $term);
+					} else {
+						$query->orWhere($column, 'regexp', $term);
 					}
 				}
+//				foreach ($terms as $termKey => $termValue) {
+//					foreach ($columns as $key => $column) {
+//						if ($termKey == 0 && $key == 0) {
+//							$query->where($column, 'regexp', $termValue);
+//						} else {
+//							$query->orWhere($column, 'regexp', $termValue);
+//						}
+//					}
+//				}
 			});
 		}
 	}

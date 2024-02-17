@@ -78,6 +78,6 @@
 @endsection
 
 @push('scripts')
-	<script type="text/javascript" src="{{ asset('assets/admin/js/ck-editor/index.js') }}?ver={{ $resourceVersion }}"></script>
+	@vite('public/assets/admin/js/ck-editor/index-vite.js')
 	<script type="text/javascript" src="{{ asset('assets/admin/js/pages/blog/settings.js') }}?ver={{ $resourceVersion }}"></script>
 @endpush
